@@ -556,7 +556,7 @@ def build_to(build_dir: Path) -> None:
     updates = [
         {
             "name": update["name"],
-            "slug": update["slug"],
+            "slug": update["slug"].lstrip("/"),
             "title": update["title"],
             "date": update["date"],
             "date_day": update["date_day"],
@@ -613,6 +613,14 @@ def build_to(build_dir: Path) -> None:
         else:
             og_image_url = SITE_URL.rstrip("/") + "/static/favicon/android-chrome-512x512.png"
 
+        rel_dir = output_path.parent.relative_to(build_dir)
+        depth = len(rel_dir.parts)
+        if output_path.name == "404.html":
+            # GitHub serves 404.html at the URL of the missing path, so a
+            # relative base would double-apply. Use the site-root absolute path.
+            base = "/daily-asking-website/"
+        else:
+            base = "./" if depth == 0 else "../" * depth
         rendered = env.render_template(
             template_name,
             title=frontmatter.get("title", "留痕"),
@@ -625,6 +633,7 @@ def build_to(build_dir: Path) -> None:
             is_article=is_article,
             og_image=og_image_url,
             page_classes=" ".join(page_classes),
+            base=base,
         )
         output_path.write_text(rendered)
         rel_path = md_path.relative_to(ROOT)

@@ -12,6 +12,13 @@
   var RTL_LANGUAGES = ['ar', 'he', 'fa'];
   var SUPPORTED_LANGUAGES = ['zh', 'en'];
 
+  // Site base URL (absolute pathname), resolved once from the initial page's
+  // data-base attribute so locale fetches stay correct after htmx pushState.
+  var I18N_BASE = new URL(
+    document.documentElement.getAttribute('data-base') || './',
+    location.href
+  ).pathname;
+
   var translations = {};
   var currentLang = FALLBACK_LANG;
   var ready = false;
@@ -71,7 +78,7 @@
       return Promise.resolve();
     }
     
-    return fetch('/locales/' + lang + '/' + ns + '.json')
+    return fetch(I18N_BASE + 'locales/' + lang + '/' + ns + '.json')
       .then(function(res) {
         if (!res.ok) throw new Error('Not found');
         return res.json();

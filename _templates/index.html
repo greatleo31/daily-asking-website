@@ -19,16 +19,16 @@
   <!-- ③ 手机主视觉 -->
   <section class="lh-screens" aria-label="留痕应用界面截图" data-i18n-aria="common.home.screensAria">
     <figure class="lh-phone">
-      <img src="/static/screens/journal.png" alt="今日记录页截图" width="698" height="1210" loading="lazy">
+      <img src="{{ base }}static/screens/journal.png" alt="今日记录页截图" width="698" height="1210" loading="lazy">
     </figure>
     <figure class="lh-phone">
-      <img src="/static/screens/map.png" alt="证据图谱页截图" width="698" height="1212" loading="lazy">
+      <img src="{{ base }}static/screens/map.png" alt="证据图谱页截图" width="698" height="1212" loading="lazy">
     </figure>
     <figure class="lh-phone">
-      <img src="/static/screens/studio.png" alt="工作室页截图" width="706" height="1202" loading="lazy">
+      <img src="{{ base }}static/screens/studio.png" alt="工作室页截图" width="706" height="1202" loading="lazy">
     </figure>
     <figure class="lh-phone">
-      <img src="/static/screens/settings.png" alt="设置页截图" width="692" height="1214" loading="lazy">
+      <img src="{{ base }}static/screens/settings.png" alt="设置页截图" width="692" height="1214" loading="lazy">
     </figure>
   </section>
 
@@ -97,19 +97,19 @@
     <p class="lh-companion-intro" data-i18n="common.home.companionBody">每坚持记录一天，伙伴就长大一点：中断不会倒退，删除不会回退——成长只看你来过多少天。</p>
     <div class="lh-timeline">
       <figure class="lh-stage">
-        <img src="/static/companion/sprout.png" alt="第 1 天成长伙伴：小芽" width="160" height="160" loading="lazy">
+        <img src="{{ base }}static/companion/sprout.png" alt="第 1 天成长伙伴：小芽" width="160" height="160" loading="lazy">
         <figcaption data-i18n="common.home.companionDay1">第 1 天 · 小芽</figcaption>
       </figure>
       <figure class="lh-stage">
-        <img src="/static/companion/bud.png" alt="第 7 天成长伙伴：花苞" width="160" height="160" loading="lazy">
+        <img src="{{ base }}static/companion/bud.png" alt="第 7 天成长伙伴：花苞" width="160" height="160" loading="lazy">
         <figcaption data-i18n="common.home.companionDay7">第 7 天 · 花苞</figcaption>
       </figure>
       <figure class="lh-stage">
-        <img src="/static/companion/bloom.png" alt="第 14 天成长伙伴：白花" width="160" height="160" loading="lazy">
+        <img src="{{ base }}static/companion/bloom.png" alt="第 14 天成长伙伴：白花" width="160" height="160" loading="lazy">
         <figcaption data-i18n="common.home.companionDay14">第 14 天 · 白花</figcaption>
       </figure>
       <figure class="lh-stage">
-        <img src="/static/companion/bee.png" alt="第 30 天成长伙伴：粉花与蜜蜂" width="160" height="160" loading="lazy">
+        <img src="{{ base }}static/companion/bee.png" alt="第 30 天成长伙伴：粉花与蜜蜂" width="160" height="160" loading="lazy">
         <figcaption data-i18n="common.home.companionDay30">第 30 天 · 蜜蜂</figcaption>
       </figure>
     </div>
@@ -157,7 +157,7 @@
       {% for post in posts %}
       {% if loop.index <= 2 %}
       <li>
-        <a href="{{ post.slug }}">
+        <a href="{{ base }}{{ post.slug }}">
           {% if post.date_iso %}
           <time class="post-date" datetime="{{ post.date_iso }}" data-i18n-date>{{ post.date_day }}</time>
           {% endif %}
@@ -168,7 +168,7 @@
       {% endfor %}
     </ul>
     {% endif %}
-    <p><a class="lh-more" href="/posts/" data-i18n="common.home.postsMore">全部更新 →</a></p>
+    <p><a class="lh-more" href="{{ base }}posts/" data-i18n="common.home.postsMore">全部更新 →</a></p>
   </section>
 
 </main>

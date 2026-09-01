@@ -11,7 +11,7 @@
         <ul class="posts-list">
           {% for post in posts %}
           <li>
-            <a href="{{ post.slug }}">
+            <a href="{{ base }}{{ post.slug }}">
               {% if post.date_iso %}
               <time class="post-date" datetime="{{ post.date_iso }}" data-i18n-date>{{ post.date_day }}</time>
               {% elif post.date %}

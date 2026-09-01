@@ -13,3 +13,4 @@ codeql-db-py/
 .codeql-results/
 _build/
 _shots/
+_subtest/

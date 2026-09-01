@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh" dir="ltr">
+<html lang="zh" dir="ltr" data-base="{{ base }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,23 +40,23 @@
   <meta name="twitter:description" content="{{ meta_description }}">
   <meta name="twitter:image" content="{{ og_image }}">
   <meta name="twitter:image:alt" content="{{ title }} — 留痕">
-  <link rel="icon" type="image/svg+xml" href="/static/favicon/square.svg">
-  <link rel="icon" type="image/x-icon" href="/static/favicon/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/static/favicon/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/static/favicon/android-chrome-512x512.png">
-  <link rel="preload" href="/static/fonts/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/static/fonts/PlantinNowVariable-Upright.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/static/fonts/PlantinNowVariable-Italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/static/fonts/departure-mono.css">
-  <link rel="stylesheet" href="/static/fonts/plantin-mt-pro.css">
-  <link rel="stylesheet" href="/static/styles.css">
-  <link rel="preload" href="/static/paper.png" as="image">
-  <link rel="preload" href="/static/paper-dark.png" as="image">
-  <link href="/posts/feed.atom" rel="alternate" title="留痕更新手记" type="application/atom+xml">
-  <link href="/posts/feed.rss" rel="alternate" title="留痕更新手记" type="application/rss+xml">
+  <link rel="icon" type="image/svg+xml" href="{{ base }}static/favicon/square.svg">
+  <link rel="icon" type="image/x-icon" href="{{ base }}static/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ base }}static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ base }}static/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ base }}static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ base }}static/favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ base }}static/favicon/android-chrome-512x512.png">
+  <link rel="preload" href="{{ base }}static/fonts/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ base }}static/fonts/PlantinNowVariable-Upright.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ base }}static/fonts/PlantinNowVariable-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ base }}static/fonts/departure-mono.css">
+  <link rel="stylesheet" href="{{ base }}static/fonts/plantin-mt-pro.css">
+  <link rel="stylesheet" href="{{ base }}static/styles.css">
+  <link rel="preload" href="{{ base }}static/paper.png" as="image">
+  <link rel="preload" href="{{ base }}static/paper-dark.png" as="image">
+  <link href="{{ base }}posts/feed.atom" rel="alternate" title="留痕更新手记" type="application/atom+xml">
+  <link href="{{ base }}posts/feed.rss" rel="alternate" title="留痕更新手记" type="application/rss+xml">
 </head>
 <body hx-boost="true" hx-ext="head-support" hx-select="div.page" hx-target="div.page" hx-swap="outerHTML swap:220ms" class="{% if slug != "/" %}skip-intro{% endif %}">
   <!-- Paint the white source logo with the shared light-theme text color. -->
@@ -75,8 +75,8 @@
   <!-- Shared frame for page content and the four pieces of site chrome. -->
   <div class="site-frame">
     <header class="site-header">
-      <a href="/" class="center-logo" dir="ltr">
-        <img class="main-logo" id="logo" src="/static/liuhen-logo.svg" alt="留痕">
+      <a href="{{ base }}" class="center-logo" dir="ltr">
+        <img class="main-logo" id="logo" src="{{ base }}static/liuhen-logo.svg" alt="留痕">
       </a>
 
       <nav class="top-nav" dir="ltr" data-site-menu aria-label="Primary navigation" data-i18n-aria="common.aria.primaryNav">
@@ -88,9 +88,9 @@
         <div class="menu-links" id="site-menu-links" hidden>
           <div class="menu-link-group">
             <a class="nav-link" href="/" data-i18n="common.nav.home">首页</a>
-            <a class="nav-link" href="/privacy/" data-i18n="common.nav.privacy">隐私</a>
-            <a class="nav-link" href="/roadmap/" data-i18n="common.nav.roadmap">路线图</a>
-            <a class="nav-link" href="/posts/" data-i18n="common.nav.posts">更新</a>
+            <a class="nav-link" href="{{ base }}privacy/" data-i18n="common.nav.privacy">隐私</a>
+            <a class="nav-link" href="{{ base }}roadmap/" data-i18n="common.nav.roadmap">路线图</a>
+            <a class="nav-link" href="{{ base }}posts/" data-i18n="common.nav.posts">更新</a>
           </div>
           <div class="menu-link-group menu-link-group--external" role="group" aria-label="External links" data-i18n-aria="common.aria.externalLinks">
             <a class="nav-link" href="https://github.com/greatleo31/daily-asking" target="_blank" rel="noopener noreferrer" data-i18n="common.nav.github">GitHub</a>
@@ -119,7 +119,7 @@
     </footer>
   </div>
 
-  <script src="/static/htmx-bundle.min.js"></script>
+  <script src="{{ base }}static/htmx-bundle.min.js"></script>
   <script>
     htmx.config.scrollIntoViewOnBoost = false;
 
@@ -238,9 +238,9 @@
       }
     });
   </script>
-  <script src="/static/purify.min.js"></script>
-  <script src="/static/i18n.js"></script>
-  <script src="/static/script.js"></script>
-  <script src="/static/typewriter.js"></script>
+  <script src="{{ base }}static/purify.min.js"></script>
+  <script src="{{ base }}static/i18n.js"></script>
+  <script src="{{ base }}static/script.js"></script>
+  <script src="{{ base }}static/typewriter.js"></script>
 </body>
 </html>
