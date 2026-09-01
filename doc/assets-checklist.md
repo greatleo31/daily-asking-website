@@ -5,7 +5,7 @@
 
 | # | 素材 | 规格 | 状态 | 说明 |
 |---|---|---|---|---|
-| 1 | 水滴 emblem Logo（定稿） | SVG | ⏳ 待你用提示词生成后交给我 | 草稿 `_static/liuhen-logo.svg` 顶位中 |
+| 1 | 水滴 emblem Logo | SVG | ✅ 已定稿接入（2026-09-01） | 源图 `doc/logo-source/`，矢量 `_static/liuhen-logo.svg` |
 | 2 | Favicon 全套 | 16/32/180/192/512/ico | ⚪ 已生成（Logo 定稿后重出） | — |
 | 3 | 截图·今日记录 | 真机 PNG | ✅ 已接入（2026-09-01） | `_static/screens/journal.png` |
 | 4 | 截图·证据图谱 | 真机 PNG | ✅ 已接入（2026-09-01） | `_static/screens/map.png` |
@@ -16,4 +16,4 @@
 | 9 | 特性图标 ×6 | Lucide 内联 | ⚪ 已接入 | lock / message-circle-question / git-fork / file-text / key-round / feather |
 | 10 | 成长伙伴四阶段图 | app 仓库现成 | ✅ 已接入 | sprout / bud / bloom / bee |
 
-**当前待办**：仅 #1 Logo（提示词见 `doc/logo-prompts.md`，生成 PNG 发我即可）。
+**当前待办**：无。全部素材就位。

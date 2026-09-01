@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" rx="110" fill="#2F4B3E"/><path d="M256 96c-22 34-58 74-58 122 0 42 27 72 58 72s58-30 58-72c0-48-36-88-58-122Z" fill="#F6F3EA"/><path d="M148 420c32 14 68 22 108 22s76-8 108-22" stroke="#F6F3EA" stroke-width="18" stroke-linecap="round" fill="none" opacity=".8"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- 留痕 favicon（依据 doc/logo-source/emblem-favicon-variant.jpg） -->
+  <rect width="512" height="512" rx="105" fill="#2F4B3E"/>
+  <ellipse cx="256" cy="351" rx="133" ry="33" fill="none" stroke="#F6F3EA" stroke-width="20"/>
+  <path d="M256 118C237 150 177 210 177 256a79 79 0 0 0 158 0C335 210 275 150 256 118Z" fill="#F6F3EA"/>
+</svg>

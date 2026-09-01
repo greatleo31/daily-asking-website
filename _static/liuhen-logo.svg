@@ -1,10 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="132" height="100" viewBox="0 0 132 100" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-  <!-- 水滴 emblem：水滴 + 涟漪，留痕意象 -->
-  <path d="M33 10C29 16 22 23.5 22 31.5 22 38.9 26.9 44 33 44s11-5.1 11-12.5C44 23.5 37 16 33 10Z"/>
-  <path d="M22 48.5c3.1 1.5 6.9 2.3 11 2.3s7.9-.8 11-2.3" opacity=".55"/>
-  <!-- 字标：留痕（竖排，占位系统宋体，定稿后替换为矢量路径） -->
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="100" viewBox="0 0 132 100" fill="none" stroke="#FFFFFF" stroke-width="10.7" stroke-linecap="round" stroke-linejoin="round">
+  <!-- 留痕站头锁定版：水滴 emblem（Gemini 定稿矢量化）+ 宋体字标，宽高比 1.32:1 -->
+  <g transform="translate(2,8) scale(0.42)">
+    <!-- 水滴：上尖下圆 -->
+    <path d="M100 46C89 64 69 82 69 100a31 31 0 0 0 62 0C131 82 111 64 100 46Z"/>
+    <!-- 内侧高光弧 -->
+    <path d="M119 99c2 12-9 20-20 19"/>
+    <!-- 涟漪：椭圆弧，顶部留出水滴遮挡的缺口 -->
+    <path d="M82.2 124.8A52 13 0 1 0 117.8 124.8"/>
+  </g>
+  <!-- 字标：留痕（竖排宋体，程序化文字） -->
   <g style="stroke:none;fill:#FFFFFF;font-family:'Noto Serif SC','Source Han Serif SC','SimSun',serif;font-weight:600" aria-label="留痕">
-    <text x="76" y="46" font-size="38">留</text>
-    <text x="76" y="90" font-size="38">痕</text>
+    <text x="96" y="46" font-size="38">留</text>
+    <text x="96" y="90" font-size="38">痕</text>
   </g>
 </svg>
