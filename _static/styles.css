@@ -2080,7 +2080,7 @@ body.theme-night .lh-btn--primary {
 }
 .lh-phone {
   width: clamp(168px, 21vw, 236px);
-  aspect-ratio: 9 / 19.5;
+  aspect-ratio: 9 / 16;
   margin: 0;
   border: 1px solid var(--lh-line-day);
   border-radius: 28px;
