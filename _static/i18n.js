@@ -6,15 +6,11 @@
 (function() {
   'use strict';
 
-  var FALLBACK_LANG = 'en';
+  var FALLBACK_LANG = 'zh';
   var LANG_COOKIE = 'lang';
-  var NAMESPACES = ['common', 'posts', 'subscribe', 'errors', 'content'];
+  var NAMESPACES = ['common', 'posts', 'errors', 'content'];
   var RTL_LANGUAGES = ['ar', 'he', 'fa'];
-  var SUPPORTED_LANGUAGES = [
-    'en', 'ar', 'bn', 'de', 'es', 'fa', 'fr', 'he', 'hi', 'id',
-    'it', 'ja', 'ko', 'ms', 'nl', 'no', 'pt', 'ru', 'sv', 'sw',
-    'ta', 'te', 'th', 'tr', 'uk', 'vi', 'zh'
-  ];
+  var SUPPORTED_LANGUAGES = ['zh', 'en'];
 
   var translations = {};
   var currentLang = FALLBACK_LANG;
@@ -115,7 +111,8 @@
     document.cookie = LANG_COOKIE + '=' + lang + ';path=/;max-age=' + (60 * 60 * 24 * 365);
   }
 
-  // Get browser language preference
+  // Get browser language preference (kept for future use; Chinese is the
+  // site default, so browser preference does not override it)
   function getBrowserLang() {
     var langs = navigator.languages || [navigator.language];
     for (var i = 0; i < langs.length; i++) {
@@ -287,10 +284,10 @@
     });
   }
 
-  // Initialize
+  // Priority: cookie > site default (Chinese). The site is Chinese-first,
+  // so browser preference does not auto-switch the language.
   function init() {
-    // Priority: cookie > browser > fallback
-    var lang = getLangFromCookie() || getBrowserLang() || FALLBACK_LANG;
+    var lang = getLangFromCookie() || FALLBACK_LANG;
     
     return loadLanguage(lang).then(function() {
       currentLang = lang;
@@ -315,64 +312,14 @@
 
   // Language names for the picker
   var LANGUAGE_NAMES = {
-    en: 'English',
-    ar: 'العربية',
-    bn: 'বাংলা',
-    de: 'Deutsch',
-    es: 'Español',
-    fa: 'فارسی',
-    fr: 'Français',
-    he: 'עברית',
-    hi: 'हिन्दी',
-    id: 'Bahasa Indonesia',
-    it: 'Italiano',
-    ja: '日本語',
-    ko: '한국어',
-    ms: 'Bahasa Melayu',
-    nl: 'Nederlands',
-    no: 'Norsk',
-    pt: 'Português',
-    ru: 'Русский',
-    sv: 'Svenska',
-    sw: 'Kiswahili',
-    ta: 'தமிழ்',
-    te: 'తెలుగు',
-    th: 'ไทย',
-    tr: 'Türkçe',
-    uk: 'Українська',
-    vi: 'Tiếng Việt',
-    zh: '中文'
+    zh: '中文',
+    en: 'English'
   };
 
-  // Short native labels for the picker toggle (first 2 chars of native name)
+  // Short native labels for the picker toggle
   var LANGUAGE_SHORT = {
-    en: 'EN',
-    ar: 'عر',
-    bn: 'বা',
-    de: 'DE',
-    es: 'ES',
-    fa: 'فا',
-    fr: 'FR',
-    he: 'עב',
-    hi: 'हि',
-    id: 'ID',
-    it: 'IT',
-    ja: '日本',
-    ko: '한국',
-    ms: 'MS',
-    nl: 'NL',
-    no: 'NO',
-    pt: 'PT',
-    ru: 'РУ',
-    sv: 'SV',
-    sw: 'SW',
-    ta: 'தமி',
-    te: 'తె',
-    th: 'ไท',
-    tr: 'TR',
-    uk: 'УК',
-    vi: 'VI',
-    zh: '中文'
+    zh: '中文',
+    en: 'EN'
   };
 
   // Initialize language picker UI

@@ -7,13 +7,15 @@ const fs = require('fs');
 const path = require('path');
 
 const LOCALES_DIR = path.resolve(__dirname, '../../locales');
-const NAMESPACES = ['common', 'posts', 'subscribe', 'errors', 'content'];
 
-const LANGUAGE_CODES = [
-  'en', 'ar', 'bn', 'de', 'es', 'fa', 'fr', 'he', 'hi', 'id',
-  'it', 'ja', 'ko', 'ms', 'nl', 'no', 'pt', 'ru', 'sv', 'sw',
-  'ta', 'te', 'th', 'tr', 'uk', 'vi', 'zh'
-];
+// Language list and namespaces come from locales/config.json so the
+// validator stays in sync with the site's configured languages.
+const config = JSON.parse(fs.readFileSync(path.join(LOCALES_DIR, 'config.json'), 'utf-8'));
+const NAMESPACES = config.namespaces;
+const LANGUAGE_CODES = config.languages.map(l => l.code).filter(code => code !== 'en');
+// The English fallback file must exist for every namespace; anything else is
+// validated only when present.
+const REQUIRED_NAMESPACES = NAMESPACES;
 
 function extractMessage(entry) {
   if (typeof entry === 'object' && entry !== null && 'message' in entry) {

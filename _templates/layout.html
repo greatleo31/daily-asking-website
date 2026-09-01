@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="zh" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +13,22 @@
     {% endif %}
   {% endif %}
 
-  <title data-i18n-doc-title="common.meta.titleFormat"{% if title_key %} data-i18n-title-key="{{ title_key }}"{% endif %} data-i18n-default-title="{{ title }}">{{ title }} | EARENDIL</title>
+  <title data-i18n-doc-title="common.meta.titleFormat"{% if title_key %} data-i18n-title-key="{{ title_key }}"{% endif %} data-i18n-default-title="{{ title }}">{{ title }} | 留痕</title>
 
   {# SEO meta tags #}
-  {% set default_description = "Earendil is a public benefit corporation crafting software and open protocols to strengthen human agency, bridge division, and cultivate lasting joy." %}
+  {% set default_description = "留痕是一款本地优先的职场证据成长助手：每天 5 分钟留痕，构建个人技术成长图谱。无账号、无云同步、MIT 开源。" %}
   {% set meta_description = description if description else default_description %}
-  {% set page_url = "https://earendil.com" ~ slug %}
+  {% set page_url = "https://greatleo31.github.io/daily-asking-website" ~ slug %}
   <meta name="description" content="{{ meta_description }}">
 
   <!-- Open Graph -->
   <meta property="og:type" content="{% if is_article %}article{% else %}website{% endif %}">
-  <meta property="og:site_name" content="Earendil">
-  <meta property="og:title" content="{{ title }} | EARENDIL">
+  <meta property="og:site_name" content="留痕">
+  <meta property="og:title" content="{{ title }} | 留痕">
   <meta property="og:description" content="{{ meta_description }}">
   <meta property="og:url" content="{{ page_url }}">
   <meta property="og:image" content="{{ og_image }}">
-  <meta property="og:image:alt" content="{{ title }} — Earendil">
+  <meta property="og:image:alt" content="{{ title }} — 留痕">
   {% if is_article %}
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -36,10 +36,10 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="{% if is_article %}summary_large_image{% else %}summary{% endif %}">
-  <meta name="twitter:title" content="{{ title }} | EARENDIL">
+  <meta name="twitter:title" content="{{ title }} | 留痕">
   <meta name="twitter:description" content="{{ meta_description }}">
   <meta name="twitter:image" content="{{ og_image }}">
-  <meta name="twitter:image:alt" content="{{ title }} — Earendil">
+  <meta name="twitter:image:alt" content="{{ title }} — 留痕">
   <link rel="icon" type="image/svg+xml" href="/static/favicon/square.svg">
   <link rel="icon" type="image/x-icon" href="/static/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
@@ -55,15 +55,15 @@
   <link rel="stylesheet" href="/static/styles.css">
   <link rel="preload" href="/static/paper.png" as="image">
   <link rel="preload" href="/static/paper-dark.png" as="image">
-  <link href="/posts/feed.atom" rel="alternate" title="Earendil Posts" type="application/atom+xml">
-  <link href="/posts/feed.rss" rel="alternate" title="Earendil Posts" type="application/rss+xml">
+  <link href="/posts/feed.atom" rel="alternate" title="留痕更新手记" type="application/atom+xml">
+  <link href="/posts/feed.rss" rel="alternate" title="留痕更新手记" type="application/rss+xml">
 </head>
 <body hx-boost="true" hx-ext="head-support" hx-select="div.page" hx-target="div.page" hx-swap="outerHTML swap:220ms" class="{% if slug != "/" %}skip-intro{% endif %}">
   <!-- Paint the white source logo with the shared light-theme text color. -->
   <svg class="svg-definitions" width="0" height="0" aria-hidden="true" focusable="false">
     <defs>
       <filter id="logo-day-color" color-interpolation-filters="sRGB">
-        <feFlood flood-color="var(--color-text-day)" result="day-color"></feFlood>
+        <feFlood flood-color="#2F4B3E" result="day-color"></feFlood>
         <feComposite in="day-color" in2="SourceAlpha" operator="in"></feComposite>
       </filter>
     </defs>
@@ -76,26 +76,24 @@
   <div class="site-frame">
     <header class="site-header">
       <a href="/" class="center-logo" dir="ltr">
-        <img class="main-logo" id="logo" src="/static/earendil-emblem.svg" alt="Earendil">
+        <img class="main-logo" id="logo" src="/static/liuhen-logo.svg" alt="留痕">
       </a>
 
       <nav class="top-nav" dir="ltr" data-site-menu aria-label="Primary navigation" data-i18n-aria="common.aria.primaryNav">
         <div class="menu-trigger">
           <button class="menu-trigger-toggle" type="button" aria-expanded="false" aria-controls="site-menu-links" aria-label="Open menu" data-i18n-aria="common.aria.openMenu">
-            <span class="menu-label" data-i18n="common.nav.menu">MENU</span>
+            <span class="menu-label" data-i18n="common.nav.menu">菜单</span>
           </button>
         </div>
         <div class="menu-links" id="site-menu-links" hidden>
           <div class="menu-link-group">
-            <a class="nav-link" href="/purpose/" data-i18n="common.nav.purpose">Purpose</a>
-            <a class="nav-link" href="/values/" data-i18n="common.nav.values">Values</a>
-            <a class="nav-link" href="/join/" data-i18n="common.nav.joinUs">Join Us</a>
-            <a class="nav-link" href="/posts/" data-i18n="common.nav.posts">Posts</a>
+            <a class="nav-link" href="/" data-i18n="common.nav.home">首页</a>
+            <a class="nav-link" href="/privacy/" data-i18n="common.nav.privacy">隐私</a>
+            <a class="nav-link" href="/roadmap/" data-i18n="common.nav.roadmap">路线图</a>
+            <a class="nav-link" href="/posts/" data-i18n="common.nav.posts">更新</a>
           </div>
           <div class="menu-link-group menu-link-group--external" role="group" aria-label="External links" data-i18n-aria="common.aria.externalLinks">
-            <a class="nav-link" href="https://pi.dev" target="_blank" rel="noopener noreferrer" data-i18n="common.nav.pi">Pi</a>
-            <a class="nav-link" href="https://lefos.com" target="_blank" rel="noopener noreferrer" data-i18n="common.nav.lefos">Lefos</a>
-            <a class="nav-link" href="https://github.com/earendil-works/" target="_blank" rel="noopener noreferrer" data-i18n="common.nav.works">Works</a>
+            <a class="nav-link" href="https://github.com/greatleo31/daily-asking" target="_blank" rel="noopener noreferrer" data-i18n="common.nav.github">GitHub</a>
           </div>
         </div>
       </nav>
@@ -107,7 +105,7 @@
     </div>
 
     <footer class="site-footer-bar">
-      <div id="site-footer" dir="ltr" data-i18n="common.site.footer">EARENDIL INC.</div>
+      <div id="site-footer" dir="ltr" data-i18n="common.site.footer">留痕 · 本地优先的职场证据成长助手</div>
 
       <div class="bottom-controls" dir="ltr">
         <div id="lang-picker" class="lang-picker">
@@ -243,5 +241,6 @@
   <script src="/static/purify.min.js"></script>
   <script src="/static/i18n.js"></script>
   <script src="/static/script.js"></script>
+  <script src="/static/typewriter.js"></script>
 </body>
 </html>

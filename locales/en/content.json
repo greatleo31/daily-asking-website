@@ -1,327 +1,38 @@
 {
-  "page.home.title": {
-    "message": "Welcome",
-    "context": "Page title for the home page shown in the browser tab and as the visually-hidden heading"
-  },
-  "page.purpose.title": {
-    "message": "Purpose",
-    "context": "Page title for the purpose page shown in the browser tab and as the visually-hidden heading"
-  },
-  "page.values.title": {
-    "message": "Values",
-    "context": "Page title for the values page shown in the browser tab and as the visually-hidden heading"
-  },
-  "page.join.title": {
-    "message": "Join",
-    "context": "Page title for the join page shown in the browser tab and as the visually-hidden heading"
-  },
-  "page.subscribe.title": {
-    "message": "Subscribe to posts",
-    "context": "Page title for the posts subscribe page shown in the browser tab and as the visually-hidden heading"
-  },
-  "page.unsubscribe.title": {
-    "message": "Unsubscribe",
-    "context": "Page title for the unsubscribe page shown in the browser tab and as the visually-hidden heading"
-  },
-  "join.hiring": {
-    "message": "We're hiring Members of our Technical Staff and Founder's Office",
-    "context": "Join page body message describing open roles"
-  },
-  "purpose.intro": {
-    "message": "<a href=\"/\">Earendil</a> is a public benefit corporation founded by <a href=\"https://ronacher.eu/\" target=\"_blank\" rel=\"noopener noreferrer\">Armin Ronacher</a> and <a href=\"https://colin.day/\" target=\"_blank\" rel=\"noopener noreferrer\">Colin Daymond Hanna</a>",
-    "context": "Purpose page intro with founder links"
-  },
-  "post.highground.title": {
-    "message": "The High Ground",
-    "context": "Blog post title - The High Ground"
-  },
-  "post.highground.body": {
-    "message": "<em>Introduction</em><br>This memo is an attempt to answer the question of where the \"high ground\" will be in software and computing outside of foundation model providers in the period 2026-2031. The backdrop being the proliferation of AI, both in terms of its persistent distribution into wider contexts of consumer and enterprise software, as well as its greater use in writing software.\n\n<em>AI in Consumer and Enterprise Software</em><br>It is no great risk to predict that AI is going to continue to permeate software. This catalyzes four main changes compared to the status quo.\n\n1. General systems growing at the expense of highly specialized ones. This is a function of the general understanding characteristic of all major LLMs.\n2. The ability of software systems to be controlled by and made customizable through natural language.\n3. The ability for software to become self-aware. Plugging code and user behavior into LLMs allows for an almost emergent capability, resulting in self-aware software.\n4. The primacy of context in highly generalizable systems. Specialization is derived not from the predetermined architecture in the software, but rather from the general availability and thoughtful application of the most relevant user/business context at run/inference time.\n\n<em>AI in Software Creation</em><br>It is also clear that AI is starting to dramatically change how software is written. We can similarly characterize four dimensions of this change:\n\n1. The cost of software creation will go down. There will be more software.\n2. Who writes software will change. Barriers to entry are falling as models with general capabilities are being harnessed by those without general capabilities but with specialized knowledge and taste.\n3. Because these capabilities become generally available, software written by LLMs will become the median software, in other words, mediocre. The great firms that will win in their niche will have to be steered either by software architects with unique insights into how to engineer their systems efficiently and scalably, or by artisans and craftsmen who wed unique market insights and taste with the general capabilities of the LLMs.\n4. AI is increasing the participation rate, both in terms of who's writing the software, but also in terms of how end users can adapt software to their unique preferences. The best systems therefore will be open, adaptable, allow for contributions from a broader developer community, and also provide high degrees of customization by their own end users.\n\n<em>A note on Social Media</em><br>Even before the machines have landed in a big way on social media, it is apparent that in general, satisfaction with social media is low.\n\nThe platforms are fragmented even while they are owned by an ever more concentrated set of hands. The algorithms drive their users towards content that generates an itch-scratch cycle of stimulation and craving.\n\nWhen you listen in on conversations at restaurants and bars, it is no exaggeration to say that often social media use is considered with disgust and self-loathing. It is not something we want to expose to our children, and it is not something that is enriching our lives or our relationships.\n\nOf course, there are a few pockets of communities for whom social media is still a net good. People who are bound together by a craft or by shared passions or interests. But these pockets of real utility are generally oases in the desert. Meaningful digital interactions between humans exist primarily within private spaces like messengers, chats, some forums, and email correspondence.\n\n<em>The High Ground</em><br>The high ground will be at the intersection of humans interacting with each other and with preeminently capable, customizable, and personal systems which are delightful, simple to use, and retain the user's trust.\n\nLet's break each one of those aspects down.\n\nInteraction: As quantum physicists know, the universe emerges more from how objects interact rather than from what objects are. As machines gain the ability to understand natural human language, we will want to stream information that is informed through interactions rather than create and maintain static information structures.\n\nCapable: This means state of the art agentic capabilities paired with precision and the absence of major mistakes.<br>Customizable: This means that the end user (be they an individual, small business or company), can modify the system to the greatest possible degree according to their own preferences, and do so easily and intuitively.\n\nPersonal: This goes beyond customizability even as it emerges partially from it. It means that a system incrementally feels like it <em>belongs</em> to the end user. It has adapted to the unique context of their lives and character.\n\nDelight: The system itself surprises the end user and brings them joy. There is a sense of wonder and light when one interacts with it.\n\nSimple: It is uncomplicated to begin with the software and to interact with it.\n\nEarning and Retaining Trust: How the product and the Company behind the product present themselves with credibility, engage with user context with transparency and refrain from abusing user trust or exposing the user to unacceptable security risks.\n\nAchieving that high ground through executing on the aspects above means unlocking an essential positive feedback loop between <em>usage</em> and <em>context</em>. Greater usage leads to deeper context, deeper context leads to more precise behavior by the system, more precise behavior by the system (particularly relative to peers or competitors) leads to greater usage. We believe that to the extent it retains the qualities above, the system should be maximally user-owned.\n\n<em>Final Thoughts</em><br>We end with a new framing.\n\nImagine a garden. Place yourself there in your mind's eye. You choose what to grow there. You tend to it with care. Your garden may be fenced to make it distinct from the gardens and spaces of others. It is a safe space, but it is not completely isolated from the world. Weather and climate and the outside world will confront you with constraints. Over time, your garden comes to reflect how you react to those constraints and decisions you have made over the years. Over time, your garden reflects you.\n\nIn your garden lives an entity. The entity is rooted within your garden but is intelligent, worldly, and capable. This entity primarily exists to guide and help you, but can also interact with others. It knows deeply every inch of your garden, every budding flower, every fruit, even as it relates what is in your garden to the wide world outside. Like your garden, this entity comes to reflect you. You can send your entity forth from your garden, but even then it is colored and rooted in the choices you made in that dirt.\n\nAt Earendil we are building the Entity and the Garden. Our system emerges from them both. We call it Lefos.\n\n<em>Authored by Colin Daymond Hanna without the assistance of an LLM</em>",
-    "context": "Blog post body - The High Ground"
-  },
-  "purpose.charter": {
-    "message": "Our purpose is embedded in our founding charter:",
-    "context": "Purpose page charter intro"
-  },
-  "purpose.craft.title": {
-    "message": "Craft software and open protocols",
-    "context": "Purpose charter item 1 title"
-  },
-  "purpose.craft.body": {
-    "message": "We believe in craft and we believe in open. Software shapes how information is understood and increasingly, how reality is perceived. That comes with responsibility.",
-    "context": "Purpose charter item 1 body"
-  },
-  "purpose.agency.title": {
-    "message": "Strengthen human agency",
-    "context": "Purpose charter item 2 title"
-  },
-  "purpose.agency.body": {
-    "message": "In a world hurtling towards AI, we believe humans are the best agents. AI is possibly the most powerful tool humanity has ever seen, but we wield the hammer, the hammer does not wield us.",
-    "context": "Purpose charter item 2 body"
-  },
-  "purpose.bridge.title": {
-    "message": "Bridge division and ignorance",
-    "context": "Purpose charter item 3 title"
-  },
-  "purpose.bridge.body": {
-    "message": "Humanity is a community. We choose to look to our commonalities rather than our differences. We look to ground ourselves in truth and share truth with one another.",
-    "context": "Purpose charter item 3 body"
-  },
-  "purpose.joy.title": {
-    "message": "Cultivate lasting joy and understanding",
-    "context": "Purpose charter item 4 title"
-  },
-  "purpose.joy.body": {
-    "message": "Our products seek to bring people lasting joy and greater mutual understanding.",
-    "context": "Purpose charter item 4 body"
-  },
+  "page.home.title": { "message": "Liúhèn", "context": "Home page title" },
+  "page.privacy.title": { "message": "Privacy", "context": "Privacy page title" },
+  "page.feedback.title": { "message": "Feedback", "context": "Feedback page title" },
+  "page.roadmap.title": { "message": "Roadmap", "context": "Roadmap page title" },
 
-  "post.invitation.title": {
-    "message": "An Invitation to Begin a Correspondence",
-    "context": "Blog post title"
-  },
-  "post.pressrelease-april-8.title": {
-    "message": "Announcing Pi & Lefos",
-    "context": "Blog post title - Announcing Pi & Lefos"
-  },
-  "post.announcement-reflection.title": {
-    "message": "A Reflection on our Announcement Today",
-    "context": "Blog post title - Announcement Reflection"
-  },
-  "post.announcement-reflection.body": {
-    "message": "Less than a year ago, in springtime Vienna, Armin and Colin met at <em>Vogel Kaffee</em> to write.\n\nWe had landed on a name, <em>Earendil</em>. We didn't yet have a company or an office. We were at the beginning, and felt the most natural place to begin was with a shared idea of what our Company should exist to do.\n\nAfter working and reworking the sentences, stressing and asking questions of each word, this is where we landed:\n\n<em>Earendil exists to strengthen the agency of humanity by crafting software and open protocols that bridge division and ignorance and cultivate lasting joy and understanding.</em>\n\nIt was a lofty set of goals, but we meant each specific clause. In a world that every day feels more divided and violent, these words ring both distinct and universal. In a world that every day feels more afraid, these words ring both strong and peaceful. This was intended.\n\nFast forward to today and we are proud to have three announcements to make.\n\nFirstly, <em>Earendil</em> has acquired <em><a href=\"https://pi.dev\" target=\"_blank\" rel=\"noopener noreferrer\">Pi</a></em>, and Mario Zechner has joined <em>Earendil</em>. Secondly, we are announcing <em><a href=\"https://lefos.com\" target=\"_blank\" rel=\"noopener noreferrer\">Lefos</a></em>, a new kind of entity designed to be both capable and trustworthy. Thirdly, we wanted to acknowledge our early backers.\n\nPrior to founding Earendil, both of us had worked in our last jobs for almost a decade. We believe in <a href=\"https://lucumr.pocoo.org/2026/3/20/some-things-just-take-time/\" target=\"_blank\" rel=\"noopener noreferrer\">planting trees</a> and nurturing them over time. All three of these announcements reflect those principles, though in different ways.\n\nFirstly, there is Mario. Armin has known Mario since he was in college. Mario has honed his craft, writing software, over many years. Both the creation of Pi and the adoption of Pi by Earendil are a function of years of dedication on one hand to honing a craft and on the other hand of building trust between two human beings. Pi is at once both at the white hot center of AI but is also a stellar example of handcrafted software. It couldn't be a more fitting example of one of Earendil's core principles.\n\nSecondly, there is <em>Lefos</em>. <em>Lefos</em> really began with a question: <em>How can a machine entity earn the trust of a human? How should it be built so that over years and decades, that trust compounds rather than erodes?</em> The power of the machines being built today is undeniable, but to really serve humanity we think a core set of principles should be rethought. Firstly, these machines should be built in the open, and on open protocols. Secondly, people should be able to tune these entities to their own preferences and constraints. Finally, companies should not presume to take user trust for granted. For anyone lucky enough to have ever worked with an assistant, you probably did not give him or her all the passwords to your email account on their first day. That trust was earned over time. We operate on a similar principle. We want <em>Lefos</em> to prove to you over time that it is worthy of your trust. We hope it does and are looking forward to your feedback.\n\nFinally, our backers. Earendil was backed from the beginning by Accel (Daniel Levine), Balderton (Daniel Waterhouse) and the Founders of n8n (Jan Oberhauser), OpenClaw (Peter Steinberger), Revolut (Vlad Yatsenko), Sentry (David Cramer), and Slack (Cal Henderson) among many others. The individuals we are working with across the board are friends and mentors, colleagues and partners. They have all invested in deep, longitudinal relationships with the both of us, and many of them have invested years in the firms and companies they have built themselves. We are proud to be associated with them.\n\nArmin & Colin\n\n—\n\nRead more about our announcements today:\n\n<a href=\"https://mariozechner.at/posts/2026-04-08-ive-sold-out/\" target=\"_blank\" rel=\"noopener noreferrer\">Mario's blog on why he joined Earendil</a><br><a href=\"https://rfc.earendil.com/0015/\" target=\"_blank\" rel=\"noopener noreferrer\">Armin's RFC on our plan for Licensing Pi</a><br><a href=\"https://lucumr.pocoo.org/2026/4/8/mario-and-earendil/\" target=\"_blank\" rel=\"noopener noreferrer\">Armin's blog on Mario</a><br><a href=\"https://www.foggynotions.day/\" target=\"_blank\" rel=\"noopener noreferrer\">Colin's blog on Partnership</a><br><a href=\"/posts/announcing-pi-and-lefos/\">Earendil's Press Release</a>",
-    "context": "Blog post body - Announcement Reflection"
-  },
-  "post.pressrelease-april-8.body": {
-    "message": "<a href=\"https://www.earendil.com\" target=\"_blank\" rel=\"noopener noreferrer\">Earendil Inc</a>. is a Public Benefit Corporation founded by Armin Ronacher and Colin Daymond Hanna in 2025. The purpose of Earendil is to strengthen the agency of humanity by crafting software and open protocols that bridge division and ignorance and cultivate lasting joy and understanding.\n\nIn service of the goals above, Earendil is proud to make several announcements today:\n\n<ul><li>The acquisition of the <a href=\"https://pi.dev\" target=\"_blank\" rel=\"noopener noreferrer\">Pi</a> Open Source project. Written by Mario Zechner, Pi is a stellar example of craft and taste in software today. Pi is the <a href=\"https://lucumr.pocoo.org/2026/1/31/pi/\" target=\"_blank\" rel=\"noopener noreferrer\">minimal agent within OpenClaw</a> and a widely-adopted Open Source coding agent and harness. Mario's commitment to openness and craft resonate strongly with the founding purpose of Earendil. Parallel to the acquisition, Mario Zechner becomes a major Earendil stakeholder and team member.</li><li><a href=\"https://lefos.com\" target=\"_blank\" rel=\"noopener noreferrer\">Lefos</a> becomes available via public alpha today. Lefos is our first step in a journey towards building a machine entity that proves both maximally capable and trustworthy. Lefos communicates with you and your co-creators over email, a stack that you control and where you can collaborate with others. Lefos helps your inbox become a command line for thoughtful work and communication. Users can join the waitlist now at <a href=\"https://lefos.com\" target=\"_blank\" rel=\"noopener noreferrer\">Lefos.com</a>.</li><li>Earendil is proud to announce our early backers: Accel (Daniel Levine), Balderton (Daniel Waterhouse) and the Founders of n8n (Jan Oberhauser), OpenClaw (Peter Steinberger), Revolut (Vlad Yatsenko), Sentry (David Cramer), and Slack (Cal Henderson) among many others. We are grateful for their trust and support.</li></ul>",
-    "context": "Blog post body - Announcing Earendil"
-  },
-  "post.invitation.body": {
-    "message": "Hello,\n\nWe believe in building in the open, sharing what we learn, what we craft, and where we're headed. If you're curious about software that strengthens human agency and bridges understanding, we'd love to have you along for the journey.\n\n<a href=\"/posts/subscribe/\">[Leave us your email]</a> to receive posts from us. Honest reflections on what we're building, why it matters, and what we're shaping together. Written by humans, not machines. We welcome your comments.\n\nWe work out of <span class=\"mono-bold\">Vienna, Austria</span>, a city of coffee, culture, and good conversation. If you're passing through and want to say hello, drop us a line at <a href=\"mailto:rfc@earendil.com\">rfc@earendil.com</a>. The door is open.\n\nWith care,\nArmin and Colin",
-    "context": "Invitation blog post body"
-  },
-  "values.heading.main": {
-    "message": "Our Values",
-    "context": "Values page main heading"
-  },
-  "values.heading.ops": {
-    "message": "Operating Principles",
-    "context": "Values page second major heading"
-  },
-  "values.compassionate.title": {
-    "message": "Be Compassionate",
-    "context": "Values section heading"
-  },
-  "values.compassionate.1": {
-    "message": "Be kind. We are people first and workers second. Remember that people have bad days",
-    "context": "Values bullet"
-  },
-  "values.compassionate.2": {
-    "message": "Reach first for generosity. The world is not zero sum. We can create abundance collectively",
-    "context": "Values bullet"
-  },
-  "values.compassionate.3": {
-    "message": "Assuming bad intentions is a self-fulfilling prophecy. Assuming grace leads to grace",
-    "context": "Values bullet"
-  },
-  "values.focused.title": {
-    "message": "Focused Excellence",
-    "context": "Values section heading"
-  },
-  "values.focused.1": {
-    "message": "We focus on what is under our control. We don’t let the rest distract us",
-    "context": "Values bullet"
-  },
-  "values.focused.2": {
-    "message": "What is under our control we deliver with pride. We harness focus to deliver excellence",
-    "context": "Values bullet"
-  },
-  "values.focused.3": {
-    "message": "We focus on excellent outcomes rather than excellent processes",
-    "context": "Values bullet"
-  },
-  "values.weNotI.title": {
-    "message": "We not I",
-    "context": "Values section heading"
-  },
-  "values.weNotI.1": {
-    "message": "We believe the best teams are greater than the sum of their parts",
-    "context": "Values bullet"
-  },
-  "values.weNotI.2": {
-    "message": "We look to maximize team utility, but recognize one another’s strengths and weaknesses",
-    "context": "Values bullet"
-  },
-  "values.weNotI.3": {
-    "message": "We carry ourselves individually with humility. As a team we project confidence",
-    "context": "Values bullet"
-  },
-  "values.family.title": {
-    "message": "Family First",
-    "context": "Values section heading"
-  },
-  "values.family.1": {
-    "message": "Our family could be our closest friends, our parents, siblings, our spouse and kids, or our dogs. These are the relationships that will define our lives. They come first",
-    "context": "Values bullet"
-  },
-  "values.family.2": {
-    "message": "We pursue our work with intensity and high standards, but we refuse to sacrifice one for the other. In conflicts, family takes precedence.",
-    "context": "Values bullet"
-  },
-  "values.curious.title": {
-    "message": "Originally Curious",
-    "context": "Values section heading"
-  },
-  "values.curious.1": {
-    "message": "We stay curious and hungry for new knowledge",
-    "context": "Values bullet"
-  },
-  "values.curious.2": {
-    "message": "We are humble enough to accept there is much we do not know, but confident enough to challenge received wisdom through our own reason",
-    "context": "Values bullet"
-  },
-  "values.curious.3": {
-    "message": "We take time to satisfy the curiosity of others and to teach what we know, across functions and bodies of knowledge",
-    "context": "Values bullet"
-  },
-  "values.vulnerable.title": {
-    "message": "Transparently Vulnerable",
-    "context": "Values section heading"
-  },
-  "values.vulnerable.1": {
-    "message": "Vulnerability breeds trust, concealment breeds distance",
-    "context": "Values bullet"
-  },
-  "values.vulnerable.2": {
-    "message": "Minimize assumptions and gossip. When in doubt, validate directly with the primary source",
-    "context": "Values bullet"
-  },
-  "values.vulnerable.3": {
-    "message": "Pursuing truth means acknowledging mistakes. Revealing mistakes should be celebrated, not criticized",
-    "context": "Values bullet"
-  },
-  "values.positive.title": {
-    "message": "Positive Intentions & Outcomes",
-    "context": "Values section heading"
-  },
-  "values.positive.1": {
-    "message": "We care deeply about contributing to positive outcomes",
-    "context": "Values bullet"
-  },
-  "values.positive.2": {
-    "message": "We can look into our parents, partners, friends, or kids’ eyes, share with them both the purpose and the reality of what we have built, including any negative externalities, and feel pride",
-    "context": "Values bullet"
-  },
-  "values.positive.3": {
-    "message": "Keep the north star north. We do not compromise our clarity of purpose",
-    "context": "Values bullet"
-  },
-  "values.agents.title": {
-    "message": "We are the Agents",
-    "context": "Values section heading"
-  },
-  "values.agents.1": {
-    "message": "We believe in human agency. We as humans have explicit intent and use every tool available to fulfill that intent",
-    "context": "Values bullet"
-  },
-  "values.agents.2": {
-    "message": "Our collective neural diversity is our strength and our moat",
-    "context": "Values bullet"
-  },
-  "values.agents.3": {
-    "message": "Leverage technology maximally but do not be lazy. Remember that you are the axe. Keep your mind sharp and do not ignorantly become the facilitator of another’s intent",
-    "context": "Values bullet"
-  },
-  "values.beauty.title": {
-    "message": "Craft Beauty",
-    "context": "Values section heading"
-  },
-  "values.beauty.1": {
-    "message": "The world needs beauty and craft",
-    "context": "Values bullet"
-  },
-  "values.beauty.2": {
-    "message": "Only you can bring your own version of beauty into the world",
-    "context": "Values bullet"
-  },
-  "values.beauty.3": {
-    "message": "To craft something well requires effort and mastery. We celebrate both",
-    "context": "Values bullet"
-  },
-  "values.charming.title": {
-    "message": "Be Charming",
-    "context": "Values section heading"
-  },
-  "values.charming.1": {
-    "message": "Being polite and charming goes a long way, especially under stress",
-    "context": "Values bullet"
-  },
-  "values.charming.2": {
-    "message": "We treat others in a way that brings lightness, maybe even a smile",
-    "context": "Values bullet"
-  },
-  "values.charming.3": {
-    "message": "We tend to overestimate how well others understand our thoughts. Remember to overcommunicate.",
-    "context": "Values bullet"
-  },
-  "values.relentless.title": {
-    "message": "Thoughtful but Relentless",
-    "context": "Values section heading"
-  },
-  "values.relentless.1": {
-    "message": "As our strength and power increases, so should the consideration we give to our actions and decisions. As we grow and succeed, we become more thoughtful and less callous",
-    "context": "Values bullet"
-  },
-  "values.relentless.2": {
-    "message": "We are considerate and thoughtful, but when we have determined the best course of action, we are relentless in the pursuit of those objectives",
-    "context": "Values bullet"
-  },
-  "values.techMeans.title": {
-    "message": "Technology is the Means, not the End",
-    "context": "Values section heading"
-  },
-  "values.techMeans.1": {
-    "message": "We use software, because that’s what we know",
-    "context": "Values bullet"
-  },
-  "values.techMeans.2": {
-    "message": "But we are not here to sell cute code, fun algorithms or programming languages",
-    "context": "Values bullet"
-  },
-  "values.techMeans.3": {
-    "message": "If we could run this business on a spreadsheet better than with code, we would",
-    "context": "Values bullet"
-  },
-  "values.ambitious.title": {
-    "message": "Ambitious Goals, Credible Steps",
-    "context": "Values section heading"
-  },
-  "values.ambitious.1": {
-    "message": "We are not afraid to be incredibly ambitious",
-    "context": "Values bullet"
-  },
-  "values.ambitious.2": {
-    "message": "But we are meticulous about forming credible plans",
-    "context": "Values bullet"
-  },
-  "values.ambitious.3": {
-    "message": "We need to convince ourselves of the path, and understand how we step into the sky",
-    "context": "Values bullet"
-  },
-  "values.responsibility.title": {
-    "message": "Radical Responsibility, Generous Recognition",
-    "context": "Values section heading"
-  },
-  "values.responsibility.1": {
-    "message": "Each individual should think like an owner of the Company",
-    "context": "Values bullet"
-  },
-  "values.responsibility.2": {
-    "message": "Every task has a clear owner, that owner has clear responsibility",
-    "context": "Values bullet"
-  },
-  "values.responsibility.3": {
-    "message": "We look to recognize the contributions of others before those of ourselves",
-    "context": "Values bullet"
-  }
+  "privacy.intro": { "message": "Liúhèn is a local-first app. This page explains, in plain words, where your data goes.", "context": "Privacy page intro" },
+  "privacy.local.title": { "message": "Data stays on your device", "context": "Privacy section title" },
+  "privacy.local.body": { "message": "All records are stored as JSON in the app's local directory on your phone. No account system, no cloud sync, no telemetry. Uninstalling removes the data with the app — nothing is sent to any server.", "context": "Privacy section body" },
+  "privacy.ai.title": { "message": "AI is entirely optional", "context": "Privacy section title" },
+  "privacy.ai.body": { "message": "By default, Liúhèn makes no network requests (except update checks). Requests to your own OpenAI-compatible endpoint only happen when you select evidence in the Studio and explicitly ask for generation.", "context": "Privacy section body" },
+  "privacy.outbound.title": { "message": "Outbound disclosure", "context": "Privacy section title" },
+  "privacy.outbound.body": { "message": "Before every real request, the app shows a disclosure sheet: who it goes to and which fields it includes. Nothing is sent until you confirm, and only the minimal fields you selected are included. Your API key lives in system-isolated storage (Android Keystore + EncryptedSharedPreferences) and is never echoed in the UI.", "context": "Privacy section body" },
+  "privacy.logs.title": { "message": "Logs: three things we never record", "context": "Privacy section title" },
+  "privacy.logs.body": { "message": "Logs never contain your API key, the body of your records, or the full text of prompts.", "context": "Privacy section body" },
+  "privacy.update.title": { "message": "Update checks", "context": "Privacy section title" },
+  "privacy.update.body": { "message": "The app contacts a version manifest (latest.json) to check for updates: manually from the About page, or automatically at launch (can be disabled). This is the only default network behavior — it fetches a version number and download URL, and never uploads local data.", "context": "Privacy section body" },
+
+  "feedback.intro": { "message": "Liúhèn is early-stage software — every piece of feedback goes straight into the development queue.", "context": "Feedback page intro" },
+  "feedback.issues.title": { "message": "Bugs & suggestions", "context": "Feedback section title" },
+  "feedback.issues.body": { "message": "File them on GitHub Issues: <a href=\"https://github.com/greatleo31/daily-asking/issues\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/greatleo31/daily-asking/issues</a>. Please search for existing issues first; crash reports should include reproduction steps.", "context": "Feedback section body" },
+  "feedback.discussion.title": { "message": "Discussions", "context": "Feedback section title" },
+  "feedback.discussion.body": { "message": "Longer discussions and usage stories are welcome in the repository's Discussions area. We reply to every post.", "context": "Feedback section body" },
+  "feedback.security.title": { "message": "Security vulnerabilities", "context": "Feedback section title" },
+  "feedback.security.body": { "message": "Please do not open public issues for security vulnerabilities. See SECURITY.md in the repository for the private contact channel; we will credit you after confirmation.", "context": "Feedback section body" },
+  "feedback.contribute.title": { "message": "Contributing", "context": "Feedback section title" },
+  "feedback.contribute.body": { "message": "Liúhèn is MIT-licensed and PRs are welcome. Read CONTRIBUTING.md first for branch conventions and the quality gates (analyze / test all green).", "context": "Feedback section body" },
+
+  "roadmap.intro": { "message": "A transparent view of what's next. This is not a promise list — progress is tracked by the actual commits in the repository.", "context": "Roadmap page intro" },
+  "roadmap.done.title": { "message": "Shipped", "context": "Roadmap section title" },
+  "roadmap.done.body": { "message": "Evidence notes & the local follow-up engine · Growth map (search / filters / completeness) · Studio (resume bullets / weekly reports / interview cards) · BYOK optional AI with outbound disclosure · Four-stage growth companion · In-app update mechanism.", "context": "Roadmap section body" },
+  "roadmap.doing.title": { "message": "In progress", "context": "Roadmap section title" },
+  "roadmap.doing.body": { "message": "Product website & docs · Polishing the companion experience (early design of quotes and monthly chapters).", "context": "Roadmap section body" },
+  "roadmap.ideas.title": { "message": "Ideas", "context": "Roadmap section title" },
+  "roadmap.ideas.body": { "message": "Companion 'maturity without graduation': monthly chapters and a small collectible each month · Richer export formats (Markdown / PDF sharing) · More artifact templates.", "context": "Roadmap section body" },
+  "roadmap.nongoals.title": { "message": "Non-goals", "context": "Roadmap section title" },
+  "roadmap.nongoals.body": { "message": "Accounts · Cloud sync · Telemetry · Subscriptions and ads. These are not unscheduled — they are principles.", "context": "Roadmap section body" }
 }

@@ -1,11 +1,7 @@
 {
   "posts.title": {
-    "message": "POSTS",
-    "context": "Title of the posts/blog listing page"
-  },
-  "posts.hearFromUs": {
-    "message": "Hear from us",
-    "context": "Link to subscribe to posts"
+    "message": "Updates",
+    "context": "Title of the posts listing page"
   },
   "posts.feedAtom": {
     "message": "ATOM",

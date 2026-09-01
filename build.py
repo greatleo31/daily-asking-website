@@ -40,7 +40,7 @@ CODE_REVEAL_MARKER = "◊"
 CODE_REVEAL_INITIAL_DELAY_MS = 120
 CODE_REVEAL_STEP_DELAY_MS = 105
 
-SITE_URL = "https://earendil.com/"
+SITE_URL = "https://greatleo31.github.io/daily-asking-website/"
 UPDATES_FEED_LIMIT = 10
 UPDATE_IGNORED_FILES = {"_index.md", "subscribe.md"}
 
@@ -48,10 +48,28 @@ OG_IMAGE_SIZE = (1200, 630)
 OG_TITLE_MAX_WIDTH = 1000
 OG_TITLE_MAX_HEIGHT = 310
 OG_TITLE_MAX_LINES = 3
-OG_TEXT_COLOR = "#353431"
+OG_TEXT_COLOR = "#2F4B3E"
 OG_PAPER_PATH = STATIC_DIR / "paper.png"
-OG_LOGO_PATH = STATIC_DIR / "og" / "earendil-logo.png"
-OG_TITLE_FONT_PATH = STATIC_DIR / "fonts" / "PlantinNowVariable-Upright.woff2"
+OG_LOGO_PATH = STATIC_DIR / "og" / "liuhen-logo.png"
+
+# PIL cannot read woff2, and article titles are Chinese — walk a fallback list
+# of TTF/TTC fonts capable of CJK glyphs before giving up to the default font.
+_OG_FONT_CANDIDATES = [
+    str(STATIC_DIR / "fonts" / "PlantinNowVariable-Upright.woff2"),
+    r"C:\Windows\Fonts\msyh.ttc",
+    r"C:\Windows\Fonts\msyhbd.ttc",
+    "/System/Library/Fonts/PingFang.ttc",
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+]
+
+
+def _load_og_font(size: int):
+    for candidate in _OG_FONT_CANDIDATES:
+        try:
+            return ImageFont.truetype(candidate, size)
+        except OSError:
+            continue
+    return ImageFont.load_default()
 
 
 def parse_frontmatter(raw: str) -> Tuple[dict[str, Any], str]:
@@ -263,7 +281,7 @@ def generate_og_image(title: str, output_path: Path) -> None:
     title_spacing = 0
     title_bbox = (0, 0, 0, 0)
     for font_size in range(80, 41, -2):
-        candidate_font = ImageFont.truetype(str(OG_TITLE_FONT_PATH), font_size)
+        candidate_font = _load_og_font(font_size)
         candidate_lines = _avoid_og_orphan(
             draw,
             _wrap_og_title(draw, title, candidate_font),
@@ -292,7 +310,7 @@ def generate_og_image(title: str, output_path: Path) -> None:
             break
 
     if title_font is None:
-        title_font = ImageFont.truetype(str(OG_TITLE_FONT_PATH), 40)
+        title_font = _load_og_font(40)
         title_lines = _truncate_og_lines(
             draw,
             _wrap_og_title(draw, title, title_font),
@@ -334,7 +352,7 @@ def iter_markdown_files() -> list[Path]:
         dirs[:] = [
             d
             for d in dirs
-            if d not in {"_build", "_build_tmp", "node_modules", "locales"} and not d.startswith(("_", "."))
+            if d not in {"_build", "_build_tmp", "node_modules", "locales", "doc", "docs"} and not d.startswith(("_", "."))
         ]
         for filename in files:
             if not filename.endswith(".md"):
@@ -430,7 +448,7 @@ def _generate_atom_feed(title: str, feed_url: str, subtitle: str, updates):
         datetime.now(timezone.utc).isoformat()
     )
     author = ElementTree.SubElement(feed, atom_element("author"))
-    ElementTree.SubElement(author, atom_element("name")).text = "Earendil"
+    ElementTree.SubElement(author, atom_element("name")).text = "留痕团队"
 
     for update in updates:
         if not update["parsed_date"]:
@@ -444,7 +462,7 @@ def _generate_atom_feed(title: str, feed_url: str, subtitle: str, updates):
         ElementTree.SubElement(entry, atom_element("published")).text = entry_date
         ElementTree.SubElement(entry, atom_element("updated")).text = entry_date
         author = ElementTree.SubElement(entry, atom_element("author"))
-        ElementTree.SubElement(author, atom_element("name")).text = "Earendil"
+        ElementTree.SubElement(author, atom_element("name")).text = "留痕团队"
         content = ElementTree.SubElement(entry, atom_element("content"), {"type": "html"})
         content.text = _absolutize_html_urls(update["content"], update_url)
 
@@ -494,17 +512,17 @@ def build_update_feeds(updates, build_dir: Path) -> None:
     rss_feed_url = SITE_URL.rstrip("/") + "/posts/feed.rss"
 
     atom_xml = _generate_atom_feed(
-        title="Earendil Posts",
+        title="留痕更新手记",
         feed_url=atom_feed_url,
-        subtitle="Posts from Earendil",
+        subtitle="留痕的最新更新手记",
         updates=recent_updates,
     )
     (posts_dir / "feed.atom").write_text(atom_xml, encoding="utf-8")
 
     rss_xml = _generate_rss_feed(
-        title="Earendil Posts",
+        title="留痕更新手记",
         feed_url=rss_feed_url,
-        subtitle="Posts from Earendil",
+        subtitle="留痕的最新更新手记",
         updates=recent_updates,
     )
     (posts_dir / "feed.rss").write_text(rss_xml, encoding="utf-8")
@@ -584,7 +602,7 @@ def build_to(build_dir: Path) -> None:
         if is_article and not og_image_path:
             og_image_path = f"/static/og{slug.rstrip('/')}.png"
             generate_og_image(
-                str(frontmatter.get("title", "Earendil")),
+                str(frontmatter.get("title", "留痕")),
                 build_dir / og_image_path.lstrip("/"),
             )
         if og_image_path:
@@ -597,7 +615,7 @@ def build_to(build_dir: Path) -> None:
 
         rendered = env.render_template(
             template_name,
-            title=frontmatter.get("title", "Earendil"),
+            title=frontmatter.get("title", "留痕"),
             description=frontmatter.get("description", ""),
             page=page,
             content=safe(html_body),

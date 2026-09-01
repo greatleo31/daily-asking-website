@@ -1,134 +1,88 @@
 {
-  "site.title": {
-    "message": "EARENDIL",
-    "context": "Site name shown in title and footer"
-  },
-  "site.footer": {
-    "message": "EARENDIL INC.",
-    "context": "Footer company name"
-  },
-  "nav.menu": {
-    "message": "MENU",
-    "context": "Trigger label for the site navigation menu"
-  },
-  "nav.purpose": {
-    "message": "Purpose",
-    "context": "Navigation link to purpose page"
-  },
-  "nav.values": {
-    "message": "Values",
-    "context": "Navigation link to values page"
-  },
-  "nav.joinUs": {
-    "message": "Join Us",
-    "context": "Navigation link to join page"
-  },
-  "nav.posts": {
-    "message": "Posts",
-    "context": "Navigation link to posts/blog section"
-  },
-  "nav.pi": {
-    "message": "Pi",
-    "context": "Navigation link to Pi product (external)"
-  },
-  "nav.lefos": {
-    "message": "Lefos",
-    "context": "Navigation link to Lefos product (external)"
-  },
-  "nav.works": {
-    "message": "Works",
-    "context": "Navigation link to GitHub works (external)"
-  },
-  "action.back": {
-    "message": "[back]",
-    "context": "Back/dismiss button text"
-  },
-  "action.close": {
-    "message": "[close]",
-    "context": "Close button text"
-  },
-  "theme.auto": {
-    "message": "AUTO",
-    "context": "Theme toggle: automatic/system preference"
-  },
-  "theme.dark": {
-    "message": "DARK",
-    "context": "Theme toggle: dark mode"
-  },
-  "theme.light": {
-    "message": "LIGHT",
-    "context": "Theme toggle: light mode"
-  },
-  "announcement.banner": {
-    "message": "ANNOUNCING PI & LEFOS →",
-    "context": "Announcement banner linking to press release"
-  },
-  "home.hero": {
-    "message": "Earendil crafts tools to harness AI with <a class=\"home-hero-link\" href=\"https://pi.dev\" target=\"_blank\" rel=\"noopener noreferrer\">Pi</a> and <a class=\"home-hero-link\" href=\"https://lefos.com\" target=\"_blank\" rel=\"noopener noreferrer\">Lefos</a>.<br><span class=\"home-hero-open-clause\">Built in the <a class=\"home-hero-open\" href=\"https://github.com/earendil-works\" target=\"_blank\" rel=\"noopener noreferrer\">open</a>,</span> <span class=\"home-hero-tail-clause\">shaped by the humans who use them.</span>",
-    "context": "Home page hero paragraph introducing Earendil with links to Pi, Lefos, and open source"
-  },
-  "meta.titleFormat": {
-    "message": "{title} | EARENDIL",
-    "context": "Format string for the browser tab title; {title} is replaced by the page title"
-  },
-  "aria.primaryNav": {
-    "message": "Primary navigation",
-    "context": "Aria-label for the site navigation region"
-  },
-  "aria.externalLinks": {
-    "message": "External links",
-    "context": "Aria-label for the external links group in the navigation"
-  },
-  "aria.openMenu": {
-    "message": "Open menu",
-    "context": "Aria-label for the menu toggle button when the menu is closed"
-  },
-  "aria.closeMenu": {
-    "message": "Close menu",
-    "context": "Aria-label for the menu toggle button when the menu is open"
-  },
-  "aria.changeLanguage": {
-    "message": "Change language",
-    "context": "Aria-label for the language picker toggle button"
-  },
-  "aria.selectLanguage": {
-    "message": "Select language",
-    "context": "Aria-label for the language picker dropdown menu"
-  },
-  "aria.appearanceLabel": {
-    "message": "Appearance: {state}",
-    "context": "Aria-label for the theme toggle button; {state} is the current theme name (auto/dark/light)"
-  },
-  "aria.emailAddress": {
-    "message": "Email address",
-    "context": "Aria-label for the email input field on subscribe/unsubscribe forms"
-  },
-  "aria.hero": {
-    "message": "Earendil hero",
-    "context": "Aria-label for the home page hero section"
-  },
-  "aria.purpose": {
-    "message": "Earendil purpose",
-    "context": "Aria-label for the purpose page"
-  },
-  "aria.values": {
-    "message": "Earendil values",
-    "context": "Aria-label for the values page"
-  },
-  "aria.join": {
-    "message": "Join Earendil",
-    "context": "Aria-label for the join page"
-  },
-  "aria.subscribe": {
-    "message": "Subscribe to Earendil posts",
-    "context": "Aria-label for the subscribe page"
-  },
-  "aria.unsubscribe": {
-    "message": "Unsubscribe from Earendil emails",
-    "context": "Aria-label for the unsubscribe page"
-  },
-  "aria.posts": {
-    "message": "Earendil posts",
-    "context": "Aria-label for posts listing and post detail pages"
-  }
+  "site.title": { "message": "Liúhèn", "context": "Site name shown in title and footer (romanized)" },
+  "site.footer": { "message": "Liúhèn · A local-first workplace evidence companion", "context": "Footer site name and tagline" },
+
+  "nav.menu": { "message": "Menu", "context": "Trigger label for the site navigation menu" },
+  "nav.home": { "message": "Home", "context": "Navigation link to home page" },
+  "nav.privacy": { "message": "Privacy", "context": "Navigation link to privacy page" },
+  "nav.roadmap": { "message": "Roadmap", "context": "Navigation link to roadmap page" },
+  "nav.posts": { "message": "Updates", "context": "Navigation link to posts section" },
+  "nav.github": { "message": "GitHub", "context": "External link to the GitHub repository" },
+
+  "action.back": { "message": "[back]", "context": "Back/dismiss button text" },
+  "action.close": { "message": "[close]", "context": "Close button text" },
+
+  "theme.auto": { "message": "AUTO", "context": "Theme toggle: automatic/system preference" },
+  "theme.dark": { "message": "DARK", "context": "Theme toggle: dark mode" },
+  "theme.light": { "message": "LIGHT", "context": "Theme toggle: light mode" },
+
+  "home.hero": { "message": "5 minutes of notes a day, <br><em>builds your growth map</em>", "context": "Home hero headline (HTML allowed)" },
+  "home.heroSub": { "message": "Liúhèn is a local-first Android app: note down one real thing that happened today, answer a follow-up question to fill in the details, and grow a searchable map of your work — then turn it into resume bullets, weekly reports, and interview cards in one tap.", "context": "Home hero supporting paragraph" },
+  "home.ctaDownload": { "message": "Download Android APK", "context": "Primary CTA: download APK from GitHub Releases" },
+  "home.ctaGithub": { "message": "GitHub", "context": "Secondary CTA: repository link" },
+  "home.trust": { "message": "No account · No login · No cloud sync · MIT open source", "context": "Trust strip under hero" },
+  "home.screensAria": { "message": "Liúhèn app screenshots", "context": "Aria label for phone screenshots section" },
+
+  "home.featuresTitle": { "message": "Features", "context": "Features section heading" },
+  "home.feature1Title": { "message": "Local-first, private by default", "context": "Feature 1 title" },
+  "home.feature1Body": { "message": "Your notes live on your phone and nowhere else. No account, no login, no cloud — your data is simple enough to take with you anytime.", "context": "Feature 1 body" },
+  "home.feature2Title": { "message": "One question a day", "context": "Feature 2 title" },
+  "home.feature2Body": { "message": "A local rule engine asks at most one follow-up a day about what matters most: result, context, action, blocker, or your personal contribution. Diary entries become complete evidence.", "context": "Feature 2 body" },
+  "home.feature3Title": { "message": "Growth map", "context": "Feature 3 title" },
+  "home.feature3Body": { "message": "Browse everything by time and tags, with full-text search and 7/30-day filters. Completeness of each piece of evidence is visible at a glance.", "context": "Feature 3 body" },
+  "home.feature4Title": { "message": "Studio", "context": "Feature 4 title" },
+  "home.feature4Body": { "message": "Pick one or more pieces of evidence and generate resume bullets, weekly reports, or interview question cards in one tap.", "context": "Feature 4 body" },
+  "home.feature5Title": { "message": "BYOK — AI is optional", "context": "Feature 5 title" },
+  "home.feature5Body": { "message": "Bring your own API key (OpenAI-compatible), stored in isolated local storage. Every outbound request shows a disclosure first and sends only the minimal fields you selected.", "context": "Feature 5 body" },
+  "home.feature6Title": { "message": "Restrained engineering", "context": "Feature 6 title" },
+  "home.feature6Body": { "message": "Theme follows the system, updates are checked in-app, no subscriptions, no ads. Software should quietly do its job.", "context": "Feature 6 body" },
+
+  "home.stepsTitle": { "message": "How it works", "context": "How-it-works section heading" },
+  "home.step1Title": { "message": "Note", "context": "Step 1 title" },
+  "home.step1Body": { "message": "Write down one real thing that happened today.", "context": "Step 1 body" },
+  "home.step2Title": { "message": "Answer", "context": "Step 2 title" },
+  "home.step2Body": { "message": "Answer one follow-up to complete the five elements.", "context": "Step 2 body" },
+  "home.step3Title": { "message": "Produce", "context": "Step 3 title" },
+  "home.step3Body": { "message": "Generate resume bullets, reports, and interview cards when you need them.", "context": "Step 3 body" },
+
+  "home.companionTitle": { "message": "Growth companion", "context": "Companion section heading" },
+  "home.companionBody": { "message": "Each day you show up, your companion grows: interruptions never roll it back, deletions never regress it. Growth only counts the days you came.", "context": "Companion section intro" },
+  "home.companionDay1": { "message": "Day 1 · Sprout", "context": "Companion stage 1 label" },
+  "home.companionDay7": { "message": "Day 7 · Bud", "context": "Companion stage 2 label" },
+  "home.companionDay14": { "message": "Day 14 · Bloom", "context": "Companion stage 3 label" },
+  "home.companionDay30": { "message": "Day 30 · Bee", "context": "Companion stage 4 label" },
+
+  "home.philosophy": { "message": "Dripping water pierces stone — wisdom from the ancients.", "context": "Philosophy line, typed out with typewriter effect" },
+
+  "home.faqTitle": { "message": "FAQ", "context": "FAQ section heading" },
+  "home.faq1Q": { "message": "Where is my data stored?", "context": "FAQ 1 question" },
+  "home.faq1A": { "message": "Only on your phone. There is no cloud component at all — uninstalling sends nothing to any server.", "context": "FAQ 1 answer" },
+  "home.faq2Q": { "message": "Do I have to configure AI to use it?", "context": "FAQ 2 question" },
+  "home.faq2A": { "message": "No. Notes, follow-ups, the map, and search all run on a local rule engine. AI generation in the Studio is optional and off by default.", "context": "FAQ 2 answer" },
+  "home.faq3Q": { "message": "If I enable AI, what gets sent out?", "context": "FAQ 3 question" },
+  "home.faq3A": { "message": "Only the minimal fields of the evidence you explicitly selected, with an outbound disclosure shown before sending. Your API key stays in isolated local storage and is never echoed back.", "context": "FAQ 3 answer" },
+  "home.faq4Q": { "message": "Which platforms are supported?", "context": "FAQ 4 question" },
+  "home.faq4A": { "message": "An Android APK is available on GitHub Releases; you can also build it yourself (Flutter 3.44+).", "context": "FAQ 4 answer" },
+  "home.faq5Q": { "message": "Is it free?", "context": "FAQ 5 question" },
+  "home.faq5A": { "message": "Free and MIT licensed. No accounts, subscriptions, in-app purchases, or ads.", "context": "FAQ 5 answer" },
+  "home.faq6Q": { "message": "How do updates work?", "context": "FAQ 6 question" },
+  "home.faq6A": { "message": "Check manually from the About page or automatically at launch; auto-update is optional, and mandatory updates cannot be skipped.", "context": "FAQ 6 answer" },
+
+  "home.postsTitle": { "message": "Latest updates", "context": "Latest posts section heading" },
+  "home.postsMore": { "message": "All updates →", "context": "Link to all posts" },
+
+  "meta.titleFormat": { "message": "{title} | Liúhèn", "context": "Browser tab title format; {title} is replaced" },
+
+  "aria.primaryNav": { "message": "Site navigation", "context": "Aria-label for the site navigation region" },
+  "aria.externalLinks": { "message": "External links", "context": "Aria-label for the external links group" },
+  "aria.openMenu": { "message": "Open menu", "context": "Menu toggle open label" },
+  "aria.closeMenu": { "message": "Close menu", "context": "Menu toggle close label" },
+  "aria.changeLanguage": { "message": "Change language", "context": "Language picker toggle aria" },
+  "aria.selectLanguage": { "message": "Select language", "context": "Language picker listbox aria" },
+  "aria.appearanceLabel": { "message": "Appearance: {state}", "context": "Theme toggle aria; {state} is current state" },
+  "aria.hero": { "message": "Liúhèn home", "context": "Home hero section aria" },
+  "aria.posts": { "message": "Liúhèn updates", "context": "Posts listing and detail aria" },
+  "aria.privacy": { "message": "Liúhèn privacy", "context": "Privacy page aria" },
+  "aria.feedback": { "message": "Liúhèn feedback", "context": "Feedback page aria" },
+  "aria.roadmap": { "message": "Liúhèn roadmap", "context": "Roadmap page aria" }
 }

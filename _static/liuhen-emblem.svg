@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- 留痕 emblem 草稿：水滴落下，涟漪留痕（规格见 doc/ui-ux.md §7.1） -->
+  <path d="M24 4C20 10 13 17.5 13 25.5 13 32.9 17.9 38 24 38s11-5.1 11-12.5C35 17.5 28 10 24 4Z"/>
+  <path d="M13 42.5c3.1 1.5 6.9 2.3 11 2.3s7.9-.8 11-2.3" opacity=".55"/>
+  <path d="M18 46c1.8.5 3.8.8 6 .8s4.2-.3 6-.8" opacity=".3"/>
+</svg>

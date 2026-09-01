@@ -3,7 +3,173 @@
 {% block page_attrs %} data-page-type="home"{% endblock %}
 
 {% block body %}
-  <section class="home-hero" aria-label="Earendil hero" data-i18n-aria="common.aria.hero">
-    <p class="home-hero-text" data-i18n-html="common.home.hero">Earendil crafts tools to harness AI with <a class="home-hero-link" href="https://pi.dev" target="_blank" rel="noopener noreferrer">Pi</a> and <a class="home-hero-link" href="https://lefos.com" target="_blank" rel="noopener noreferrer">Lefos</a>.<br><span class="home-hero-open-clause">Built in the <a class="home-hero-open" href="https://github.com/earendil-works" target="_blank" rel="noopener noreferrer">open</a>,</span> <span class="home-hero-tail-clause">shaped by the humans who use them.</span></p>
+<main class="lh-home">
+
+  <!-- ① Hero -->
+  <section class="lh-hero" aria-label="留痕首页" data-i18n-aria="common.aria.hero">
+    <h1 class="lh-hero-title" data-i18n-html="common.home.hero">每天 5 分钟留痕，<br><em>构建个人技术成长图谱</em></h1>
+    <p class="lh-hero-sub" data-i18n="common.home.heroSub">留痕是一款本地优先的 Android 应用：记录今天的一件真实小事，追问补全细节，沉淀为可检索的成长图谱——在你需要时，一键生成简历要点、周报与面试卡。</p>
+    <div class="lh-hero-cta">
+      <a class="lh-btn lh-btn--primary" href="https://github.com/greatleo31/daily-asking/releases" target="_blank" rel="noopener noreferrer" data-i18n="common.home.ctaDownload">下载 Android APK</a>
+      <a class="lh-btn" href="https://github.com/greatleo31/daily-asking" target="_blank" rel="noopener noreferrer" data-i18n="common.home.ctaGithub">GitHub</a>
+    </div>
+    <p class="lh-trust" data-i18n="common.home.trust">无账号 · 无登录 · 无云同步 · MIT 开源</p>
   </section>
+
+  <!-- ③ 手机主视觉 -->
+  <section class="lh-screens" aria-label="留痕应用界面截图" data-i18n-aria="common.home.screensAria">
+    <figure class="lh-phone">
+      <img src="/static/screens/journal.jpg" alt="今日记录页截图" width="405" height="878" loading="lazy">
+    </figure>
+    <figure class="lh-phone">
+      <img src="/static/screens/question.jpg" alt="每日一问追问页截图" width="405" height="878" loading="lazy">
+    </figure>
+    <figure class="lh-phone">
+      <img src="/static/screens/map.jpg" alt="成长图谱页截图" width="405" height="878" loading="lazy">
+    </figure>
+    <figure class="lh-phone">
+      <img src="/static/screens/studio.jpg" alt="工作室生成页截图" width="405" height="878" loading="lazy">
+    </figure>
+  </section>
+
+  <!-- ④ 特性六卡 -->
+  <section class="lh-section" id="features">
+    <h2 class="lh-section-title" data-i18n="common.home.featuresTitle">特性</h2>
+    <div class="lh-grid">
+      <article class="lh-card">
+        <span class="lh-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+        <h3 data-i18n="common.home.feature1Title">本地优先，隐私默认</h3>
+        <p data-i18n="common.home.feature1Body">记录只存在你的手机里。没有账号、没有登录、没有云端，数据形态简单到随时可以打包带走。</p>
+      </article>
+      <article class="lh-card">
+        <span class="lh-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+        <h3 data-i18n="common.home.feature2Title">每日一问</h3>
+        <p data-i18n="common.home.feature2Body">本地规则引擎每天最多追问一个「最值得补充」的问题：结果、背景、行动、难点、个人贡献，把流水账变成完整证据。</p>
+      </article>
+      <article class="lh-card">
+        <span class="lh-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg></span>
+        <h3 data-i18n="common.home.feature3Title">成长图谱</h3>
+        <p data-i18n="common.home.feature3Body">按时间与标签检索全部记录，支持全文搜索与近 7 天 / 30 天筛选，每条证据的完整度一目了然。</p>
+      </article>
+      <article class="lh-card">
+        <span class="lh-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span>
+        <h3 data-i18n="common.home.feature4Title">工作室</h3>
+        <p data-i18n="common.home.feature4Body">勾选一条或多条证据，一键生成简历要点、周报或面试追问卡，直接可用。</p>
+      </article>
+      <article class="lh-card">
+        <span class="lh-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg></span>
+        <h3 data-i18n="common.home.feature5Title">BYOK，AI 是选修</h3>
+        <p data-i18n="common.home.feature5Body">用你自己的 API Key（OpenAI 兼容），本机隔离存储；每次出站前展示披露、确认后才发送，且只发送你选中的最小字段。</p>
+      </article>
+      <article class="lh-card">
+        <span class="lh-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></svg></span>
+        <h3 data-i18n="common.home.feature6Title">克制的工程</h3>
+        <p data-i18n="common.home.feature6Body">主题跟随系统、应用内检查更新、无订阅无广告。软件应该安静地把事做完。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ⑤ 三步 -->
+  <section class="lh-section">
+    <h2 class="lh-section-title" data-i18n="common.home.stepsTitle">工作原理</h2>
+    <ol class="lh-steps">
+      <li class="lh-step">
+        <span class="lh-step-no" aria-hidden="true">01</span>
+        <h3 data-i18n="common.home.step1Title">记录</h3>
+        <p data-i18n="common.home.step1Body">写下今天发生的一件真实小事。</p>
+      </li>
+      <li class="lh-step">
+        <span class="lh-step-no" aria-hidden="true">02</span>
+        <h3 data-i18n="common.home.step2Title">追问</h3>
+        <p data-i18n="common.home.step2Body">回答一个追问，补全五要素。</p>
+      </li>
+      <li class="lh-step">
+        <span class="lh-step-no" aria-hidden="true">03</span>
+        <h3 data-i18n="common.home.step3Title">产出</h3>
+        <p data-i18n="common.home.step3Body">需要时一键生成简历要点、周报、面试卡。</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ⑥ 成长伙伴 -->
+  <section class="lh-section lh-companion">
+    <h2 class="lh-section-title" data-i18n="common.home.companionTitle">成长伙伴</h2>
+    <p class="lh-companion-intro" data-i18n="common.home.companionBody">每坚持记录一天，伙伴就长大一点：中断不会倒退，删除不会回退——成长只看你来过多少天。</p>
+    <div class="lh-timeline">
+      <figure class="lh-stage">
+        <img src="/static/companion/sprout.png" alt="第 1 天成长伙伴：小芽" width="160" height="160" loading="lazy">
+        <figcaption data-i18n="common.home.companionDay1">第 1 天 · 小芽</figcaption>
+      </figure>
+      <figure class="lh-stage">
+        <img src="/static/companion/bud.png" alt="第 7 天成长伙伴：花苞" width="160" height="160" loading="lazy">
+        <figcaption data-i18n="common.home.companionDay7">第 7 天 · 花苞</figcaption>
+      </figure>
+      <figure class="lh-stage">
+        <img src="/static/companion/bloom.png" alt="第 14 天成长伙伴：白花" width="160" height="160" loading="lazy">
+        <figcaption data-i18n="common.home.companionDay14">第 14 天 · 白花</figcaption>
+      </figure>
+      <figure class="lh-stage">
+        <img src="/static/companion/bee.png" alt="第 30 天成长伙伴：粉花与蜜蜂" width="160" height="160" loading="lazy">
+        <figcaption data-i18n="common.home.companionDay30">第 30 天 · 蜜蜂</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ⑦ 理念（打字机） -->
+  <section class="lh-philosophy">
+    <p class="lh-philosophy-line" data-typewriter data-i18n="common.home.philosophy">水滴石穿，来自古人的智慧。</p>
+  </section>
+
+  <!-- ⑧ FAQ -->
+  <section class="lh-section lh-faq">
+    <h2 class="lh-section-title" data-i18n="common.home.faqTitle">常见问题</h2>
+    <details class="lh-faq-item">
+      <summary data-i18n="common.home.faq1Q">我的数据存在哪里？</summary>
+      <p data-i18n="common.home.faq1A">只存在你的手机本机，没有任何云端组件。卸载应用也不会把数据送到任何服务器。</p>
+    </details>
+    <details class="lh-faq-item">
+      <summary data-i18n="common.home.faq2Q">必须配置 AI 才能用吗？</summary>
+      <p data-i18n="common.home.faq2A">不。记录、追问、图谱、检索全部由本地规则引擎完成；工作室的 AI 生成是可选功能，默认完全不启用。</p>
+    </details>
+    <details class="lh-faq-item">
+      <summary data-i18n="common.home.faq3Q">AI 开启后，会发送什么出去？</summary>
+      <p data-i18n="common.home.faq3A">只发送你明确选中的证据的最小字段，发送前会展示「出站披露」并要求确认；API Key 存在本机隔离存储中，页面不回显。</p>
+    </details>
+    <details class="lh-faq-item">
+      <summary data-i18n="common.home.faq4Q">支持什么平台？</summary>
+      <p data-i18n="common.home.faq4A">目前提供 Android 安装包（GitHub Releases）；也可以按仓库说明自行构建（Flutter 3.44+）。</p>
+    </details>
+    <details class="lh-faq-item">
+      <summary data-i18n="common.home.faq5Q">收费吗？</summary>
+      <p data-i18n="common.home.faq5A">免费，MIT 开源。没有账号、订阅、内购和广告。</p>
+    </details>
+    <details class="lh-faq-item">
+      <summary data-i18n="common.home.faq6Q">如何更新？</summary>
+      <p data-i18n="common.home.faq6A">关于页可手动检查更新，也支持启动时自动检查；可开启自动更新，强制更新不可跳过。</p>
+    </details>
+  </section>
+
+  <!-- ⑨ 更新手记 -->
+  <section class="lh-section lh-posts-preview">
+    <h2 class="lh-section-title" data-i18n="common.home.postsTitle">更新手记</h2>
+    {% if posts %}
+    <ul class="lh-posts-list">
+      {% for post in posts %}
+      {% if loop.index <= 2 %}
+      <li>
+        <a href="{{ post.slug }}">
+          {% if post.date_iso %}
+          <time class="post-date" datetime="{{ post.date_iso }}" data-i18n-date>{{ post.date_day }}</time>
+          {% endif %}
+          <span class="post-name"{% if post.i18n_key %} data-i18n="content.{{ post.i18n_key }}.title"{% endif %}>{{ post.title }}</span>
+        </a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <p><a class="lh-more" href="/posts/" data-i18n="common.home.postsMore">全部更新 →</a></p>
+  </section>
+
+</main>
 {% endblock %}

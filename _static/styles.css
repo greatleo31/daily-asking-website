@@ -1998,3 +1998,294 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
   }
 
 }
+
+/* ==== 留痕 (Liúhèn) 首页区块 · doc/ui-ux.md §4.1/§5 ==== */
+:root {
+  --lh-ink: #2F4B3E;
+  --lh-mineral: #F6F3EA;
+  --lh-night-soft: #8FB8A4;
+  --lh-serif-cjk: 'PlantinNow', Georgia, 'Noto Serif SC', 'Source Han Serif SC', 'SimSun', serif;
+  --lh-line-day: rgba(53, 52, 49, 0.28);
+  --lh-line-night: rgba(255, 255, 255, 0.32);
+}
+
+.lh-home { padding-top: 0.5rem; }
+
+/* ① Hero */
+.lh-hero {
+  text-align: center;
+  padding: calc(var(--frame-block) * 0.5) var(--frame-inline) 0;
+}
+.lh-hero-title {
+  font-family: var(--lh-serif-cjk);
+  font-size: clamp(1.9rem, 1.2rem + 3.2vw, 2.9rem);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: 0.01em;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.lh-hero-title em { font-style: normal; color: var(--lh-ink); }
+body.theme-night .lh-hero-title em { color: var(--lh-night-soft); }
+.lh-hero-sub {
+  max-width: 660px;
+  margin: 1.6rem auto 0;
+  opacity: 0.88;
+  line-height: 1.8;
+}
+.lh-hero-cta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 1.9rem;
+}
+.lh-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-size: var(--text-ui);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: opacity 160ms ease;
+}
+.lh-btn:hover { opacity: 0.8; }
+.lh-btn--primary {
+  background: var(--lh-ink);
+  border-color: var(--lh-ink);
+  color: var(--lh-mineral);
+}
+body.theme-night .lh-btn--primary {
+  background: var(--lh-night-soft);
+  border-color: var(--lh-night-soft);
+  color: #141715;
+}
+.lh-trust {
+  margin-top: 1.8rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  opacity: 0.72;
+}
+
+/* ③ 手机主视觉 */
+.lh-screens {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2.5vw, 28px);
+  margin: clamp(40px, 6vw, 64px) var(--frame-inline) 0;
+}
+.lh-phone {
+  width: clamp(168px, 21vw, 236px);
+  aspect-ratio: 9 / 19.5;
+  margin: 0;
+  border: 1px solid var(--lh-line-day);
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--lh-mineral);
+}
+body.theme-night .lh-phone { border-color: var(--lh-line-night); background: #1D211E; }
+.lh-phone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 区块公共 */
+.lh-section {
+  max-width: 960px;
+  margin: clamp(64px, 9vw, 104px) auto 0;
+  padding: 0 var(--frame-inline);
+}
+.lh-section-title {
+  font-family: var(--lh-serif-cjk);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 1.8rem;
+}
+
+/* ④ 特性六卡 */
+.lh-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.lh-card {
+  border: 1px solid var(--lh-line-day);
+  border-radius: 12px;
+  padding: 22px 20px;
+  transition: border-color 160ms ease;
+}
+body.theme-night .lh-card { border-color: var(--lh-line-night); }
+.lh-card:hover { border-color: var(--lh-ink); }
+body.theme-night .lh-card:hover { border-color: var(--lh-night-soft); }
+.lh-card-icon { display: inline-block; color: var(--lh-ink); margin-bottom: 12px; }
+body.theme-night .lh-card-icon { color: var(--lh-night-soft); }
+.lh-card h3 { font-size: 1.02rem; font-weight: 600; margin: 0 0 8px; }
+.lh-card p { margin: 0; opacity: 0.82; line-height: 1.7; font-size: 0.92rem; }
+
+/* ⑤ 三步 */
+.lh-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.lh-step { border-top: 1px solid var(--lh-line-day); padding-top: 16px; }
+body.theme-night .lh-step { border-top-color: var(--lh-line-night); }
+.lh-step-no {
+  font-family: var(--mono-font);
+  font-size: 2.2rem;
+  opacity: 0.35;
+  display: block;
+}
+.lh-step h3 { font-size: 1.02rem; font-weight: 600; margin: 10px 0 6px; }
+.lh-step p { margin: 0; opacity: 0.82; line-height: 1.7; font-size: 0.92rem; }
+
+/* ⑥ 成长伙伴时间线 */
+.lh-companion-intro {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  opacity: 0.85;
+  line-height: 1.8;
+}
+.lh-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.lh-stage {
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+.lh-stage::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  width: 100%;
+  height: 1px;
+  background: var(--lh-line-day);
+}
+.lh-stage:first-child::before { display: none; }
+.lh-stage img {
+  width: clamp(96px, 10vw, 140px);
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--lh-line-day);
+  background: var(--lh-mineral);
+  position: relative;
+}
+body.theme-night .lh-stage img { border-color: var(--lh-line-night); background: #1D211E; }
+.lh-stage figcaption {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+}
+
+/* ⑦ 理念 · 打字机 */
+.lh-philosophy {
+  text-align: center;
+  padding: clamp(80px, 12vw, 130px) var(--frame-inline);
+}
+.lh-philosophy-line {
+  font-family: var(--lh-serif-cjk);
+  font-size: clamp(1.5rem, 1rem + 2.4vw, 2.3rem);
+  font-weight: 600;
+  margin: 0 auto;
+  min-height: 1.5em;
+  max-width: 820px;
+}
+.typewriter--caret::after {
+  content: '▍';
+  margin-left: 3px;
+  animation: lh-caret 600ms steps(1) infinite;
+}
+@keyframes lh-caret { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .typewriter--caret::after { animation: none; }
+}
+
+/* ⑧ FAQ */
+.lh-faq { max-width: 720px; }
+.lh-faq-item {
+  border-top: 1px solid var(--lh-line-day);
+}
+body.theme-night .lh-faq-item { border-top-color: var(--lh-line-night); }
+.lh-faq-item:last-of-type { border-bottom: 1px solid var(--lh-line-day); }
+body.theme-night .lh-faq-item:last-of-type { border-bottom-color: var(--lh-line-night); }
+.lh-faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 15px 4px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  position: relative;
+  padding-right: 40px;
+}
+.lh-faq-item summary::-webkit-details-marker { display: none; }
+.lh-faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono-font);
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+.lh-faq-item[open] summary::after { content: '−'; }
+.lh-faq-item p {
+  margin: 0;
+  padding: 0 4px 16px;
+  opacity: 0.85;
+  line-height: 1.75;
+  font-size: 0.93rem;
+}
+
+/* ⑨ 更新手记预览 */
+.lh-posts-list { list-style: none; margin: 0; padding: 0; }
+.lh-posts-list li { border-top: 1px solid var(--lh-line-day); }
+body.theme-night .lh-posts-list li { border-top-color: var(--lh-line-night); }
+.lh-posts-list li:last-child { border-bottom: 1px solid var(--lh-line-day); }
+body.theme-night .lh-posts-list li:last-child { border-bottom-color: var(--lh-line-night); }
+.lh-posts-list a {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 4px;
+  text-decoration: none;
+}
+.lh-posts-list .post-date {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+.lh-posts-list .post-name { font-size: 0.98rem; }
+.lh-more {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+/* 响应式（§3.4 断点） */
+@media (max-width: 900px) {
+  .lh-grid, .lh-steps { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .lh-grid, .lh-steps { grid-template-columns: 1fr; }
+  .lh-timeline { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
+  .lh-stage::before { display: none; }
+  .lh-hero { padding-top: 1.5rem; }
+}
