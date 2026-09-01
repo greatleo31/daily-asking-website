@@ -1,5 +1,5 @@
 {
-  "page.home.title": { "message": "Liúhèn", "context": "Home page title" },
+  "page.home.title": { "message": "Home", "context": "Home page title" },
   "page.privacy.title": { "message": "Privacy", "context": "Privacy page title" },
   "page.feedback.title": { "message": "Feedback", "context": "Feedback page title" },
   "page.roadmap.title": { "message": "Roadmap", "context": "Roadmap page title" },
