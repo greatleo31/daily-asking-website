@@ -33,7 +33,7 @@
     if (!group) return;
     var peers = group.querySelectorAll(':scope > .lh-reveal');
     var i = Array.prototype.indexOf.call(peers, el);
-    if (i > 0) el.style.setProperty('--lh-delay', (i * 90) + 'ms');
+    if (i > 0) el.style.setProperty('--lh-delay', (i * 160) + 'ms');
   }
 
   function setup() {
@@ -53,7 +53,7 @@
         entry.target.classList.add('is-in');
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
 
     nodes.forEach(function (el) {
       el.classList.add('lh-reveal');

@@ -2281,9 +2281,9 @@ body.theme-night .lh-posts-list li:last-child { border-bottom-color: var(--lh-li
 
 html.lh-js .lh-reveal {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 700ms var(--theme-transition-easing),
-              transform 700ms var(--theme-transition-easing);
+  transform: translateY(36px);
+  transition: opacity 1.6s var(--theme-transition-easing),
+              transform 1.6s var(--theme-transition-easing);
   transition-delay: var(--lh-delay, 0ms);
 }
 html.lh-js .lh-reveal.is-in {
