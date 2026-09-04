@@ -1,5 +1,5 @@
 /* Prose typography for rendered markdown (Tailwind Typography port). */
-@import url('/static/prose.css');
+@import url('prose.css');
 
 /* ==========================================================================
    Z-INDEX LAYERS
@@ -573,7 +573,7 @@ body:not(.theme-night) .home-hero {
   height: var(--hero-star-size);
   transform: translateX(-50%);
   transform-origin: center;
-  background: url('/static/cursor-light.svg') center/contain no-repeat;
+  background: url('cursor-light.svg') center/contain no-repeat;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s ease;
@@ -581,7 +581,7 @@ body:not(.theme-night) .home-hero {
 
 body:not(.theme-night) .home-hero-link::before,
 body:not(.theme-night) .home-hero-open::after {
-  background-image: url('/static/cursor-dark.svg');
+  background-image: url('cursor-dark.svg');
 }
 
 .home-hero-link::before {
@@ -647,7 +647,7 @@ body:not(.theme-night) .home-hero-open::after {
     radial-gradient(circle at 40% 66%, rgba(185, 185, 185, 0.16) 0 1px, transparent 1.8px),
     radial-gradient(circle at 86% 78%, rgba(170, 170, 170, 0.2) 0 1px, transparent 1.8px),
     linear-gradient(rgba(58, 58, 58, 0.98), rgba(58, 58, 58, 0.98)),
-    url('/static/paper-dark.png') center/220px 220px;
+    url('paper-dark.png') center/220px 220px;
   background-size: 220px 220px, 220px 220px, 220px 220px, 220px 220px, auto, 220px 220px;
   background-repeat: repeat;
 }
@@ -734,7 +734,7 @@ body:not(.theme-night) .top-nav.is-open .menu-trigger-toggle {
   content: "";
   width: 15px;
   height: 15px;
-  background: url('/static/cursor-light.svg') center/contain no-repeat;
+  background: url('cursor-light.svg') center/contain no-repeat;
   transform-origin: center;
   flex: 0 0 auto;
   opacity: 0;
@@ -752,7 +752,7 @@ body:not(.theme-night) .top-nav.is-open .menu-trigger-toggle {
 }
 
 body:not(.theme-night) .nav-link::after {
-  background-image: url('/static/cursor-dark.svg');
+  background-image: url('cursor-dark.svg');
 }
 
 .nav-link:hover::after {
@@ -1108,7 +1108,7 @@ body:not(.theme-night) .nav-link::after {
   width: 15px;
   height: 15px;
   margin-inline-start: 8px;
-  background: url('/static/cursor-light.svg') center/contain no-repeat;
+  background: url('cursor-light.svg') center/contain no-repeat;
   transform-origin: center;
   vertical-align: -2px;
   opacity: 0;
@@ -1116,7 +1116,7 @@ body:not(.theme-night) .nav-link::after {
 }
 
 body:not(.theme-night) .posts-list .post-name::after {
-  background-image: url('/static/cursor-dark.svg');
+  background-image: url('cursor-dark.svg');
 }
 
 .posts-list a:is(:hover, :focus-visible) .post-name::after {
@@ -1661,7 +1661,7 @@ body:not(.theme-night) .posts-list .post-name::after {
   content: "";
   width: 15px;
   height: 15px;
-  background: url('/static/cursor-light.svg') center/contain no-repeat;
+  background: url('cursor-light.svg') center/contain no-repeat;
   transform-origin: center;
   flex: 0 0 auto;
   opacity: 0;
@@ -1669,7 +1669,7 @@ body:not(.theme-night) .posts-list .post-name::after {
 }
 
 body:not(.theme-night) .page--values .disclosure-summary::after {
-  background-image: url('/static/cursor-dark.svg');
+  background-image: url('cursor-dark.svg');
 }
 
 .page--values .disclosure-summary:is(:hover, :focus-visible)::after {
@@ -1822,7 +1822,7 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
     background-color: #faf9f6;
     background-image:
       linear-gradient(rgba(250, 249, 246, 0.97), rgba(250, 249, 246, 0.97)),
-      url('/static/paper.png');
+      url('paper.png');
     background-size: auto, 260px 260px;
     /* The menu surface fades across the left half, then remains fully opaque
        behind the right-aligned navigation. */
@@ -1843,7 +1843,7 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
     background-color: #2e2d2b;
     background-image:
       linear-gradient(rgba(46, 45, 43, 0.97), rgba(46, 45, 43, 0.97)),
-      url('/static/paper-dark.png');
+      url('paper-dark.png');
   }
 
   .top-nav .menu-links[hidden] {
