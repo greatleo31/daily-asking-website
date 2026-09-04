@@ -188,7 +188,7 @@ canvas.shader-ready {
   top: 0;
   left: 0;
   right: 0;
-  align-items: center;
+  align-items: flex-start;
   padding: var(--frame-block) var(--frame-inline) 0;
 }
 
@@ -693,6 +693,9 @@ body:not(.theme-night) .top-nav.is-open .menu-trigger-toggle {
 }
 
 .menu-links {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
