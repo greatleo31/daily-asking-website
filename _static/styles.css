@@ -2401,14 +2401,16 @@ body.theme-night .lh-top {
 
 html.lh-js .lh-reveal {
   opacity: 0;
-  transform: translateY(36px);
+  transform: translate3d(0, 36px, 0);
+  -webkit-transform: translate3d(0, 36px, 0);
   transition: opacity 1.6s var(--theme-transition-easing),
               transform 1.6s var(--theme-transition-easing);
   transition-delay: var(--lh-delay, 0ms);
 }
 html.lh-js .lh-reveal.is-in {
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 @media (prefers-reduced-motion: reduce) {
   html.lh-js .lh-reveal,

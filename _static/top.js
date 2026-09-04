@@ -1,10 +1,14 @@
 /**
- * Bottom-right back-to-top with ease-in-out (accel then decel).
+ * Back-to-top: constant accel then equal decel (triangle velocity).
+ * Distance D, duration T => a = 4D / T^2. Peak speed v = a * T/2.
  */
 (function () {
   'use strict';
 
-  var SHOW_AFTER = 320;
+  var SHOW_AFTER = 240;
+  var MIN_MS = 900;
+  var MAX_MS = 2000;
+  var running = false;
   var btn = document.getElementById('lh-top');
   if (!btn) return;
 
@@ -13,27 +17,52 @@
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
-  function easeInOutCubic(t) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  function yNow() {
+    return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  }
+
+  function ySet(y) {
+    window.scrollTo(0, y);
+    document.documentElement.scrollTop = y;
+    document.body.scrollTop = y;
   }
 
   function sync() {
-    btn.classList.toggle('is-on', window.scrollY > SHOW_AFTER);
+    btn.classList.toggle('is-on', yNow() > SHOW_AFTER);
   }
 
   function toTop() {
-    var start = window.scrollY;
-    if (start <= 0) return;
+    var start = yNow();
+    if (start <= 0 || running) return;
     if (reduced()) {
-      window.scrollTo(0, 0);
+      ySet(0);
       return;
     }
-    var duration = Math.min(1600, Math.max(720, start * 0.55));
+    running = true;
+    var duration = Math.min(MAX_MS, Math.max(MIN_MS, 2 * Math.sqrt(start / 14000) * 1000));
+    var T = duration / 1000;
+    var half = T / 2;
+    var a = (4 * start) / (T * T);
     var t0 = performance.now();
+
     function frame(now) {
-      var p = Math.min(1, (now - t0) / duration);
-      window.scrollTo(0, Math.round(start * (1 - easeInOutCubic(p))));
-      if (p < 1) requestAnimationFrame(frame);
+      var t = (now - t0) / 1000;
+      if (t >= T) {
+        ySet(0);
+        running = false;
+        sync();
+        return;
+      }
+      var gone;
+      if (t <= half) {
+        gone = 0.5 * a * t * t;
+      } else {
+        var td = t - half;
+        var vPeak = a * half;
+        gone = 0.5 * a * half * half + vPeak * td - 0.5 * a * td * td;
+      }
+      ySet(Math.max(0, start - gone));
+      requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
   }
@@ -43,5 +72,6 @@
     toTop();
   });
   window.addEventListener('scroll', sync, { passive: true });
+  document.addEventListener('touchmove', sync, { passive: true });
   sync();
 })();

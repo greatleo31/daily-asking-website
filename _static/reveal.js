@@ -1,7 +1,7 @@
 /**
  * Scroll-in reveals for the home page.
- * No-JS: content stays visible. Reduced motion: skip transforms.
- * Rebinds after htmx swaps so back-to-home still works.
+ * Hide first, wait two frames so the browser records the start state,
+ * then observe. Same-frame hide+show skips the transition on mobile.
  */
 (function () {
   'use strict';
@@ -31,9 +31,21 @@
   function stagger(el) {
     var group = el.parentElement;
     if (!group) return;
-    var peers = group.querySelectorAll(':scope > .lh-reveal');
-    var i = Array.prototype.indexOf.call(peers, el);
-    if (i > 0) el.style.setProperty('--lh-delay', (i * 160) + 'ms');
+    var kids = group.children;
+    var i = 0;
+    var n = 0;
+    for (i = 0; i < kids.length; i += 1) {
+      if (kids[i] === el) {
+        if (n > 0) el.style.setProperty('--lh-delay', (n * 160) + 'ms');
+        return;
+      }
+      if (kids[i].classList && kids[i].classList.contains('lh-reveal')) n += 1;
+    }
+  }
+
+  function arm(el) {
+    if (el.classList.contains('is-in')) return;
+    el.classList.add('is-in');
   }
 
   function setup() {
@@ -47,19 +59,27 @@
     var nodes = document.querySelectorAll(SELECTOR);
     if (!nodes.length) return;
 
+    nodes.forEach(function (el) {
+      el.classList.add('lh-reveal');
+      el.classList.remove('is-in');
+    });
+    nodes.forEach(stagger);
+
     observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-in');
+        arm(entry.target);
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px -12% 0px' });
 
-    nodes.forEach(function (el) {
-      el.classList.add('lh-reveal');
-      observer.observe(el);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        nodes.forEach(function (el) {
+          observer.observe(el);
+        });
+      });
     });
-    nodes.forEach(stagger);
   }
 
   if (document.readyState === 'loading') {
