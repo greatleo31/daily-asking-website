@@ -22,6 +22,10 @@
   "home.ctaGithub": { "message": "GitHub", "context": "Secondary CTA: repository link" },
   "home.trust": { "message": "No account · No login · No cloud sync · MIT open source", "context": "Trust strip under hero" },
   "home.screensAria": { "message": "Liúhèn app screenshots", "context": "Aria label for phone screenshots section" },
+  "home.screenToday": { "message": "Today", "context": "Caption under Today screenshot" },
+  "home.screenRecord": { "message": "Journal", "context": "Caption under Journal screenshot" },
+  "home.screenStudio": { "message": "Studio", "context": "Caption under Studio screenshot" },
+  "home.screenSettings": { "message": "Settings", "context": "Caption under Settings screenshot" },
 
   "home.featuresTitle": { "message": "Features", "context": "Features section heading" },
   "home.feature1Title": { "message": "Local-first, private by default", "context": "Feature 1 title" },
