@@ -5,7 +5,7 @@
 
 | # | 素材 | 规格 | 状态 | 说明 |
 |---|---|---|---|---|
-| 1 | 水滴 emblem Logo | SVG | ✅ 锁头已加大（2026-09-04） | emblem `_static/liuhen-emblem.svg`；白描边 `_static/liuhen-mark.svg`（导航 img + WebGL）；字标在 header HTML 横排 |
+| 1 | 水滴 emblem Logo | SVG | ✅ 已定稿接入（2026-09-01） | 源图 `doc/logo-source/`，矢量 `_static/liuhen-logo.svg` |
 | 2 | Favicon 全套 | 16/32/180/192/512/ico | ⚪ 已生成（Logo 定稿后重出） | — |
 | 3 | 截图·今日 | 真机 PNG | ✅ 已换新（2026-09-04，v1.2.2） | `_static/screens/journal.png` ← `D:\胡衍科\照片\留痕\首页.png` |
 | 4 | 截图·记录 | 真机 PNG | ✅ 已换新（2026-09-04，v1.2.2） | `_static/screens/map.png` ← `记录.png`（底栏已从「证据」改为「记录」） |

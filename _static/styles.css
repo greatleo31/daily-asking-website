@@ -188,7 +188,7 @@ canvas.shader-ready {
   top: 0;
   left: 0;
   right: 0;
-  align-items: center;
+  align-items: flex-start;
   padding: var(--frame-block) var(--frame-inline) 0;
 }
 
@@ -218,39 +218,28 @@ canvas.shader-ready {
    ========================================================================== */
 
 .center-logo {
-  position: static;
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: block;
   text-decoration: none;
-  color: inherit;
 }
 
 .main-logo {
   display: block;
-  width: 48px;
-  height: 48px;
-  flex: 0 0 auto;
+  /* The centered lockup used to be wider than the emblem. Preserve roughly
+     the same visual height now that every page uses the emblem-only asset. */
+  width: 125px;
+  max-width: 27vw;
   opacity: 0;
   transition: opacity 0.35s ease, filter 0.48s ease;
 }
 
-.lh-brand-word {
-  font-family: var(--lh-serif-cjk, 'PlantinNow', Georgia, 'Noto Serif SC', serif);
-  font-size: 1.45rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  line-height: 1;
-  opacity: 0;
-  transition: opacity 0.35s ease, color 0.48s ease;
-}
-
 .loaded .main-logo,
-.skip-intro .main-logo,
-.loaded .lh-brand-word,
-.skip-intro .lh-brand-word {
-  opacity: 0.92;
+.skip-intro .main-logo {
+  opacity: 0.85;
 }
 
 body:has(.page[data-page-type="home"]) .center-logo,
@@ -258,12 +247,14 @@ body:has(.page[data-page-type="corner-logo"]) .center-logo {
   position: static;
   transform: none;
   flex: 0 0 auto;
+  /* Optical exception: center the tall emblem on the first navigation row. */
+  margin-block-start: -35px;
 }
 
 body:has(.page[data-page-type="home"]) .main-logo,
 body:has(.page[data-page-type="corner-logo"]) .main-logo {
-  width: 48px;
-  height: 48px;
+  /* The emblem SVG has a tight viewBox, so its visible edge is the frame edge. */
+  width: 32px;
   max-width: none;
 }
 
@@ -463,14 +454,6 @@ body.theme-night:has(.content-page) :is(a, button, summary) {
 
 body:not(.theme-night) .main-logo {
   filter: url('#logo-day-color');
-}
-
-body:not(.theme-night) .lh-brand-word {
-  color: var(--lh-ink, #2F4B3E);
-}
-
-body.theme-night .lh-brand-word {
-  color: #f4f1ea;
 }
 
 body:not(.theme-night) :is(.nav-link, .menu-label, #site-footer, #theme-toggle, #lang-toggle) {
@@ -1926,17 +1909,20 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
   }
 
 
-  .main-logo,
-  body:has(.page[data-page-type="home"]) .main-logo,
-  body:has(.page[data-page-type="corner-logo"]) .main-logo {
-    width: 40px;
-    height: 40px;
-    max-width: none;
+  .main-logo {
+    width: 88px;
+    max-width: 19vw;
   }
 
-  .lh-brand-word {
-    font-size: 1.2rem;
-    letter-spacing: 0.14em;
+  body:has(.page[data-page-type="home"]) .center-logo,
+  body:has(.page[data-page-type="corner-logo"]) .center-logo {
+    margin-block-start: -10px;
+  }
+
+  body:has(.page[data-page-type="home"]) .main-logo,
+  body:has(.page[data-page-type="corner-logo"]) .main-logo {
+    width: 22px;
+    max-width: none;
   }
 
 
@@ -2025,81 +2011,10 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
 
 .lh-home { padding-top: 0.5rem; }
 
-.lh-mark {
-  display: block;
-  width: 22px;
-  height: 22px;
-  flex: 0 0 auto;
-  background: currentColor;
-  -webkit-mask: url('liuhen-emblem.svg') center / contain no-repeat;
-  mask: url('liuhen-emblem.svg') center / contain no-repeat;
-}
-
-.lh-footer-id {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  min-width: 0;
-}
-
-.lh-mark--foot {
-  width: 18px;
-  height: 18px;
-  color: currentColor;
-  opacity: 0.88;
-}
-
-body:not(.theme-night) .lh-mark--foot {
-  color: var(--lh-ink);
-}
-
-body.theme-night .lh-mark--foot {
-  color: var(--lh-night-soft);
-}
-
 /* ① Hero */
 .lh-hero {
-  position: relative;
   text-align: center;
   padding: calc(var(--frame-block) * 0.5) var(--frame-inline) 0;
-}
-.lh-hero-mark {
-  position: absolute;
-  left: 50%;
-  top: 0.2rem;
-  width: min(240px, 42vw);
-  height: min(240px, 42vw);
-  transform: translate(-50%, -8%);
-  background: var(--lh-ink);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 0;
-  -webkit-mask: url('liuhen-emblem.svg') center / contain no-repeat;
-  mask: url('liuhen-emblem.svg') center / contain no-repeat;
-}
-body.theme-night .lh-hero-mark { background: var(--lh-night-soft); }
-.lh-hero-title,
-.lh-hero-sub,
-.lh-hero-cta,
-.lh-trust {
-  position: relative;
-  z-index: 1;
-}
-.loaded .lh-hero-mark,
-.skip-intro .lh-hero-mark {
-  animation: lh-drop 1.1s var(--theme-transition-easing) both;
-}
-@keyframes lh-drop {
-  from { opacity: 0; transform: translate(-50%, -18%); }
-  to { opacity: 0.12; transform: translate(-50%, -8%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .loaded .lh-hero-mark,
-  .skip-intro .lh-hero-mark {
-    animation: none;
-    opacity: 0.12;
-    transform: translate(-50%, -8%);
-  }
 }
 .lh-hero-title {
   font-family: var(--lh-serif-cjk);
@@ -2193,17 +2108,6 @@ body.theme-night .lh-phone { border-color: var(--lh-line-night); background: #1D
   text-align: center;
   margin: 0 0 1.8rem;
 }
-.lh-section-title::before {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin: 0 auto 0.7rem;
-  background: var(--lh-ink);
-  -webkit-mask: url('liuhen-emblem.svg') center / contain no-repeat;
-  mask: url('liuhen-emblem.svg') center / contain no-repeat;
-}
-body.theme-night .lh-section-title::before { background: var(--lh-night-soft); }
 
 /* ④ 特性六卡 */
 .lh-grid {
