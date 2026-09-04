@@ -1,5 +1,7 @@
 {
   "error.404.aria": "未找到",
-  "error.404.message": "它迷失了，再也没有被看到。",
-  "error.404.title": "未找到"
+  "error.404.title": "这条路上没有留痕",
+  "error.404.message": "这个地址不存在，或已经搬走。",
+  "error.404.home": "回到首页",
+  "error.404.posts": "更新手记"
 }

@@ -3,7 +3,14 @@
 {% block page_attrs %} data-page-type="404"{% endblock %}
 
 {% block body %}
-  <div class="error-text" role="alert" aria-label="{{ page.aria_label }}" data-i18n-aria="errors.error.404.aria">
-    {{ content }}
+<main class="lh-404" role="alert" aria-label="未找到" data-i18n-aria="errors.error.404.aria">
+  <span class="lh-404-mark" aria-hidden="true"></span>
+  <p class="lh-404-code">404</p>
+  <h1 class="lh-404-title" data-i18n="errors.error.404.title">这条路上没有留痕</h1>
+  <p class="lh-404-body" data-i18n="errors.error.404.message">这个地址不存在，或已经搬走。</p>
+  <div class="lh-404-cta">
+    <a class="lh-btn lh-btn--primary" href="{{ base }}" data-i18n="errors.error.404.home">回到首页</a>
+    <a class="lh-btn" href="{{ base }}posts/" data-i18n="errors.error.404.posts">更新手记</a>
   </div>
+</main>
 {% endblock %}

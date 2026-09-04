@@ -1,14 +1,22 @@
 {
   "error.404.title": {
-    "message": "Not Found",
+    "message": "No trace on this path",
     "context": "404 page title"
   },
   "error.404.message": {
-    "message": "It was lost, and has not been seen again.",
+    "message": "This address does not exist, or it has already moved on.",
     "context": "404 error message displayed to user"
   },
   "error.404.aria": {
     "message": "Page not found",
     "context": "404 page aria-label"
+  },
+  "error.404.home": {
+    "message": "Back home",
+    "context": "404 CTA back to homepage"
+  },
+  "error.404.posts": {
+    "message": "Updates",
+    "context": "404 CTA to posts index"
   }
 }

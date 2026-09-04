@@ -1341,27 +1341,56 @@ body:not(.theme-night) .posts-list .post-name::after {
    404 Error Page
    ========================================================================== */
 
-.error-text {
-  position: fixed;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%) translateY(20px);
-  text-align: center;
-  font-family: var(--mono-font);
-  font-size: var(--text-body);
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  letter-spacing: 0.02em;
+.lh-404 {
+  position: relative;
   z-index: 100;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 1s ease 2s, transform 1s ease 2s;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem var(--frame-inline) 6rem;
+  pointer-events: auto;
 }
-
-.page[data-page-type="404"] .error-text {
-  opacity: 1;
-  transform: translate(-50%, -50%);
+.lh-404-mark {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 1.4rem;
+  background: var(--lh-ink, #2F4B3E);
+  -webkit-mask: url('liuhen-emblem.svg') center / contain no-repeat;
+  mask: url('liuhen-emblem.svg') center / contain no-repeat;
+}
+body.theme-night .lh-404-mark { background: var(--lh-night-soft, #8FB8A4); }
+.lh-404-code {
+  font-family: var(--mono-font);
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  opacity: 0.55;
+  margin: 0 0 0.7rem;
+}
+.lh-404-title {
+  font-family: var(--lh-serif-cjk, Georgia, serif);
+  font-size: clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem);
+  font-weight: 600;
+  margin: 0;
+  color: var(--lh-ink, #2F4B3E);
+}
+body.theme-night .lh-404-title { color: var(--lh-night-text, #F6F3EA); }
+.lh-404-body {
+  max-width: 28rem;
+  margin: 0.9rem 0 0;
+  line-height: 1.8;
+  opacity: 0.82;
+}
+body.theme-night .lh-404-body { color: var(--lh-night-muted, rgba(246, 243, 234, 0.78)); opacity: 1; }
+.lh-404-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 1.8rem;
 }
 
 /* ==========================================================================
