@@ -40,8 +40,8 @@ CODE_REVEAL_MARKER = "◊"
 CODE_REVEAL_INITIAL_DELAY_MS = 120
 CODE_REVEAL_STEP_DELAY_MS = 105
 
-SITE_URL = "https://greatleo31.github.io/daily-asking-website/"
-SITE_BASE = "/daily-asking-website/"
+SITE_URL = "https://www.yankehu-ai.me/"
+SITE_BASE = "/"
 UPDATES_FEED_LIMIT = 10
 UPDATE_IGNORED_FILES = {"_index.md", "subscribe.md"}
 
@@ -614,8 +614,6 @@ def build_to(build_dir: Path) -> None:
         else:
             og_image_url = SITE_URL.rstrip("/") + "/static/favicon/android-chrome-512x512.png"
 
-        # Project Pages live under /daily-asking-website/. Relative ./ breaks
-        # when the URL has no trailing slash (assets resolve to github.io/static).
         base = SITE_BASE
         rendered = env.render_template(
             template_name,
@@ -630,6 +628,7 @@ def build_to(build_dir: Path) -> None:
             og_image=og_image_url,
             page_classes=" ".join(page_classes),
             base=base,
+            site_url=SITE_URL.rstrip("/"),
         )
         output_path.write_text(rendered)
         rel_path = md_path.relative_to(ROOT)
@@ -684,23 +683,9 @@ class LiveReloadHandler(SimpleHTTPRequestHandler):
         except (ConnectionResetError, BrokenPipeError):
             pass
 
-    def translate_path(self, path):
-        prefix = SITE_BASE.rstrip("/")
-        bare = path.split("?", 1)[0]
-        if bare == prefix or bare.startswith(prefix + "/"):
-            rest = bare[len(prefix):] or "/"
-            path = rest + (("?" + path.split("?", 1)[1]) if "?" in path else "")
-        return super().translate_path(path)
-
     def do_GET(self):
         try:
-            req = self.path.split("?", 1)[0]
-            if req in ("/", ""):
-                self.send_response(302)
-                self.send_header("Location", SITE_BASE)
-                self.end_headers()
-                return
-            if req == "/sse" or req == SITE_BASE.rstrip("/") + "/sse":
+            if self.path.split("?", 1)[0] == "/sse":
                 self.handle_sse()
             else:
                 self.handle_file_with_reload()
