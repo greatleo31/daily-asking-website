@@ -84,23 +84,34 @@
         <span class="lh-brand-word" aria-hidden="true" data-i18n="common.site.title">留痕</span>
       </a>
 
-      <nav class="top-nav" dir="ltr" data-site-menu aria-label="Primary navigation" data-i18n-aria="common.aria.primaryNav">
-        <div class="menu-trigger">
-          <button class="menu-trigger-toggle" type="button" aria-expanded="false" aria-controls="site-menu-links" aria-label="Open menu" data-i18n-aria="common.aria.openMenu">
-            <span class="menu-label" data-i18n="common.nav.menu">菜单</span>
-          </button>
-        </div>
-        <div class="menu-links" id="site-menu-links" hidden>
-          <div class="menu-link-group">
-            <a class="nav-link" href="{{ base }}privacy/" data-i18n="common.nav.privacy">隐私</a>
-            <a class="nav-link" href="{{ base }}roadmap/" data-i18n="common.nav.roadmap">路线图</a>
-            <a class="nav-link" href="{{ base }}posts/" data-i18n="common.nav.posts">更新</a>
+      <div class="header-end">
+        <div class="bottom-controls" dir="ltr">
+          <div id="lang-picker" class="lang-picker">
+            <button id="lang-toggle" type="button" aria-label="Change language" data-i18n-aria="common.aria.changeLanguage" aria-expanded="false" aria-haspopup="listbox">
+              <span class="lang-current">EN</span>
+            </button>
+            <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Select language" data-i18n-aria="common.aria.selectLanguage" hidden></ul>
           </div>
-          <div class="menu-link-group menu-link-group--external" role="group" aria-label="External links" data-i18n-aria="common.aria.externalLinks">
-            <a class="nav-link" href="https://github.com/greatleo31/daily-asking" target="_blank" rel="noopener noreferrer" data-i18n="common.nav.github">GitHub</a>
-          </div>
+          <button id="theme-toggle" type="button" aria-label="Toggle color theme"><span class="value"></span></button>
         </div>
-      </nav>
+        <nav class="top-nav" dir="ltr" data-site-menu aria-label="Primary navigation" data-i18n-aria="common.aria.primaryNav">
+          <div class="menu-trigger">
+            <button class="menu-trigger-toggle" type="button" aria-expanded="false" aria-controls="site-menu-links" aria-label="Open menu" data-i18n-aria="common.aria.openMenu">
+              <span class="menu-label" data-i18n="common.nav.menu">菜单</span>
+            </button>
+          </div>
+          <div class="menu-links" id="site-menu-links" hidden>
+            <div class="menu-link-group">
+              <a class="nav-link" href="{{ base }}privacy/" data-i18n="common.nav.privacy">隐私</a>
+              <a class="nav-link" href="{{ base }}roadmap/" data-i18n="common.nav.roadmap">路线图</a>
+              <a class="nav-link" href="{{ base }}posts/" data-i18n="common.nav.posts">更新</a>
+            </div>
+            <div class="menu-link-group menu-link-group--external" role="group" aria-label="External links" data-i18n-aria="common.aria.externalLinks">
+              <a class="nav-link" href="https://github.com/greatleo31/daily-asking" target="_blank" rel="noopener noreferrer" data-i18n="common.nav.github">GitHub</a>
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <!-- Page content layer -->
@@ -110,16 +121,6 @@
 
     <footer class="site-footer-bar">
       <div id="site-footer" dir="ltr" data-i18n="common.site.footer">留痕 · 本地优先的职场证据成长助手</div>
-
-      <div class="bottom-controls" dir="ltr">
-        <div id="lang-picker" class="lang-picker">
-          <button id="lang-toggle" type="button" aria-label="Change language" data-i18n-aria="common.aria.changeLanguage" aria-expanded="false" aria-haspopup="listbox">
-            <span class="lang-current">EN</span>
-          </button>
-          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Select language" data-i18n-aria="common.aria.selectLanguage" hidden></ul>
-        </div>
-        <button id="theme-toggle" type="button" aria-label="Toggle color theme"><span class="value"></span></button>
-      </div>
     </footer>
   </div>
   <button type="button" class="lh-top" id="lh-top" aria-label="返回顶部" data-i18n="common.action.top" data-i18n-aria="common.aria.backToTop">返回</button>

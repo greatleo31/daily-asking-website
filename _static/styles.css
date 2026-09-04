@@ -209,9 +209,24 @@ canvas.shader-ready {
   pointer-events: auto;
 }
 
-.site-header > .top-nav,
-.site-footer-bar > .bottom-controls {
+.site-header > .header-end {
   margin-left: auto;
+}
+
+.header-end {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.15rem 0.4rem;
+  position: relative;
+  z-index: 310;
+}
+
+.header-end .bottom-controls {
+  z-index: 3;
+}
+
+.header-end .top-nav {
+  z-index: 2;
 }
 
 /* ==========================================================================
@@ -1722,6 +1737,14 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
   .site-footer-bar {
     padding-inline: clamp(28px, calc(50vw - 520px), var(--frame-inline));
   }
+
+  .site-header .bottom-controls {
+    position: fixed;
+    right: var(--frame-inline);
+    bottom: var(--frame-block);
+    margin: 0;
+    z-index: 200;
+  }
 }
 
 @media (min-width: 801px) and (max-width: 1100px) {
@@ -1792,6 +1815,11 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
     display: none;
   }
 
+  .header-end {
+    align-items: center;
+    gap: 0;
+  }
+
   .menu-trigger {
     justify-content: flex-end;
   }
@@ -1800,6 +1828,22 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
     min-height: 44px;
     margin: -15px -10px;
     padding: 15px 10px;
+  }
+
+  .header-end .bottom-controls {
+    gap: 0;
+  }
+
+  .header-end #lang-toggle,
+  .header-end #theme-toggle {
+    min-height: 44px;
+    padding: 8px 8px;
+  }
+
+  .header-end .lang-menu {
+    top: calc(100% + 6px);
+    bottom: auto;
+    margin-bottom: 0;
   }
 
   .top-nav .menu-links {
@@ -2511,7 +2555,7 @@ html.lh-js .lh-reveal.is-in {
   }
   .center-logo {
     gap: 0.4rem;
-    max-width: calc(100vw - var(--frame-inline) * 2 - 4.25rem);
+    max-width: calc(100vw - var(--frame-inline) * 2 - 8.5rem);
   }
   .lh-brand-word {
     font-size: 1.05rem;
