@@ -41,6 +41,7 @@ CODE_REVEAL_INITIAL_DELAY_MS = 120
 CODE_REVEAL_STEP_DELAY_MS = 105
 
 SITE_URL = "https://greatleo31.github.io/daily-asking-website/"
+SITE_BASE = "/daily-asking-website/"
 UPDATES_FEED_LIMIT = 10
 UPDATE_IGNORED_FILES = {"_index.md", "subscribe.md"}
 
@@ -613,14 +614,11 @@ def build_to(build_dir: Path) -> None:
         else:
             og_image_url = SITE_URL.rstrip("/") + "/static/favicon/android-chrome-512x512.png"
 
-        rel_dir = output_path.parent.relative_to(build_dir)
-        depth = len(rel_dir.parts)
-        if output_path.name == "404.html":
-            # GitHub serves 404.html at the URL of the missing path, so a
-            # relative base would double-apply. Use the site-root absolute path.
-            base = "/daily-asking-website/"
-        else:
-            base = "./" if depth == 0 else "../" * depth
+        # Always the Pages project prefix. Relative ./ ../ breaks when the
+        # current URL has no trailing slash, and {{ base }}{{ slug }} with a
+        # leading-slash slug resolves to github.io/posts/... instead of
+        # github.io/daily-asking-website/posts/...
+        base = SITE_BASE
         rendered = env.render_template(
             template_name,
             title=frontmatter.get("title", "留痕"),
