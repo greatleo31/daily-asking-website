@@ -66,6 +66,10 @@
         <feFlood flood-color="#2F4B3E" result="day-color"></feFlood>
         <feComposite in="day-color" in2="SourceAlpha" operator="in"></feComposite>
       </filter>
+      <filter id="logo-night-color" color-interpolation-filters="sRGB">
+        <feFlood flood-color="#8FB8A4" result="night-color"></feFlood>
+        <feComposite in="night-color" in2="SourceAlpha" operator="in"></feComposite>
+      </filter>
     </defs>
   </svg>
 
@@ -75,8 +79,9 @@
   <!-- Shared frame for page content and the four pieces of site chrome. -->
   <div class="site-frame">
     <header class="site-header">
-      <a href="{{ base }}" class="center-logo" dir="ltr">
-        <img class="main-logo" id="logo" src="{{ base }}static/liuhen-logo.svg" alt="留痕">
+      <a href="{{ base }}" class="center-logo lh-brand" dir="ltr" aria-label="留痕" data-i18n-aria="common.site.title">
+        <img class="main-logo" id="logo" src="{{ base }}static/liuhen-mark.svg" alt="" width="200" height="200">
+        <span class="lh-brand-word" aria-hidden="true" data-i18n="common.site.title">留痕</span>
       </a>
 
       <nav class="top-nav" dir="ltr" data-site-menu aria-label="Primary navigation" data-i18n-aria="common.aria.primaryNav">

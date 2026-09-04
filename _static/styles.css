@@ -188,7 +188,7 @@ canvas.shader-ready {
   top: 0;
   left: 0;
   right: 0;
-  align-items: flex-start;
+  align-items: center;
   padding: var(--frame-block) var(--frame-inline) 0;
 }
 
@@ -218,28 +218,40 @@ canvas.shader-ready {
    ========================================================================== */
 
 .center-logo {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  display: block;
+  position: static;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   text-decoration: none;
+  color: inherit;
 }
 
 .main-logo {
   display: block;
-  /* The centered lockup used to be wider than the emblem. Preserve roughly
-     the same visual height now that every page uses the emblem-only asset. */
-  width: 125px;
-  max-width: 27vw;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
   opacity: 0;
   transition: opacity 0.35s ease, filter 0.48s ease;
 }
 
+.lh-brand-word {
+  font-family: var(--lh-serif-cjk, 'PlantinNow', Georgia, 'Noto Serif SC', serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  color: var(--lh-ink, #2F4B3E);
+  opacity: 0;
+  transition: opacity 0.35s ease, color 0.48s ease, filter 0.48s ease;
+}
+
 .loaded .main-logo,
-.skip-intro .main-logo {
-  opacity: 0.85;
+.skip-intro .main-logo,
+.loaded .lh-brand-word,
+.skip-intro .lh-brand-word {
+  opacity: 0.92;
 }
 
 body:has(.page[data-page-type="home"]) .center-logo,
@@ -247,14 +259,12 @@ body:has(.page[data-page-type="corner-logo"]) .center-logo {
   position: static;
   transform: none;
   flex: 0 0 auto;
-  /* Optical exception: center the tall emblem on the first navigation row. */
-  margin-block-start: -35px;
 }
 
 body:has(.page[data-page-type="home"]) .main-logo,
 body:has(.page[data-page-type="corner-logo"]) .main-logo {
-  /* The emblem SVG has a tight viewBox, so its visible edge is the frame edge. */
-  width: 32px;
+  width: 44px;
+  height: 44px;
   max-width: none;
 }
 
@@ -454,6 +464,14 @@ body.theme-night:has(.content-page) :is(a, button, summary) {
 
 body:not(.theme-night) .main-logo {
   filter: url('#logo-day-color');
+}
+
+body.theme-night .main-logo {
+  filter: url('#logo-night-color');
+}
+
+body.theme-night .lh-brand-word {
+  color: var(--lh-night-text, #F6F3EA);
 }
 
 body:not(.theme-night) :is(.nav-link, .menu-label, #site-footer, #theme-toggle, #lang-toggle) {
@@ -1909,20 +1927,17 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
   }
 
 
-  .main-logo {
-    width: 88px;
-    max-width: 19vw;
-  }
-
-  body:has(.page[data-page-type="home"]) .center-logo,
-  body:has(.page[data-page-type="corner-logo"]) .center-logo {
-    margin-block-start: -10px;
-  }
-
+  .main-logo,
   body:has(.page[data-page-type="home"]) .main-logo,
   body:has(.page[data-page-type="corner-logo"]) .main-logo {
-    width: 22px;
+    width: 40px;
+    height: 40px;
     max-width: none;
+  }
+
+  .lh-brand-word {
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
   }
 
 

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Tight emblem for header placement; color via #logo-day-color / #logo-night-color. -->
+  <path d="M100 46C89 64 69 82 69 100a31 31 0 0 0 62 0C131 82 111 64 100 46Z"/>
+  <path d="M119 99c2 12-9 20-20 19"/>
+  <path d="M82.2 124.8A52 13 0 1 0 117.8 124.8"/>
+</svg>
