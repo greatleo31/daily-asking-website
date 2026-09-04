@@ -1,6 +1,6 @@
 # 「留痕」官网前端 UI/UX 规范
 
-> 版本 v1.0 · 2026-09-01
+> 版本 v1.1 · 2026-09-04
 > 适用范围：`greatleo31/daily-asking-website`（基于 earendil-works/website Apache-2.0 改建）
 > 配套文档：`doc/assets-checklist.md`（素材追踪表）
 
@@ -10,7 +10,7 @@
 
 1. **官网是 app 的延伸**：色彩、语气、克制程度与 Flutter 端 `lib/app/theme.dart` 保持同源（矿物白、墨绿、"克制、清晰、安静"）。
 2. **纸质文人气质**：沿用 earendil 的 paper.png 纹理背景、衬线标题（Plantin Now）+ 等宽标注（Commit/Departure Mono）体系；中文字形回退系统字体栈，不引入中文 webfont。
-3. **唯一动效例外**：理念段打字机效果（见 §6.1）。除此之外无玻璃拟态、无光球、无呼吸动画——与 app 设计基调一致。
+3. **动效例外**：理念段打字机（§6.1）+ 滚动揭示（§6.2）。无玻璃拟态、无光球、无滚动劫持、无自动轮播。
 4. **内容即结构**：文案一律走 `locales/{zh,en}` 语言文件（`data-i18n` 机制），页面 md 内联中文兜底。
 
 ---
@@ -76,8 +76,8 @@
 |---|---|---|---|
 | 1 | Hero | H1「每天 5 分钟留痕，构建个人技术成长图谱」+ 副标 + CTA×2（下载 APK / GitHub） | 居中单列，H1 下副标 ≤2 行 |
 | 2 | 信任条 | `无账号 · 无登录 · 无云同步 · MIT 开源` | 等宽字体单行，点号分隔，桌面居中 |
-| 3 | 手机主视觉 | 4 张真机截图轮显（默认静态并排，桌面 4 列→平板 2×2） | CSS 手机框（36px 圆角、1px 描边、投影） |
-| 4 | 特性六卡 | 见 §6.3 图标映射 | 375 单列 / 768 两列 / 1080 三列 |
+| 3 | 手机主视觉 | 4 张 v1.2.2 真机截图：今日 / 记录 / 工作室 / 设置 | 桌面 1+3 舞台；平板 2×2；手机横向 `scroll-snap` |
+| 4 | 特性六卡 | 见 §7.4 图标映射 | 375 单列 / 768 两列 / 1080 三列 |
 | 5 | 三步 | 01 记录 → 02 追问 → 03 产出（每步配截图 1 张） | 横向三列，移动端纵排，序号等宽字体 |
 | 6 | 成长伙伴 | 四阶段横排时间线（小芽→花苞→白花→蜜蜂），一句话介绍 | 4 图等宽并排，768 以下 2×2 |
 | 7 | 理念段 | 「水滴石穿，来自古人的智慧。」**打字机效果**（§6.1） | 大字居中，留白上下 ≥96px |
@@ -92,27 +92,35 @@
 
 ## 5. 组件规格
 
-- **导航**：保留 MENU 下拉交互；外链组只留 GitHub；语言切换在页脚（zh 默认，EN 备选）
+- **导航**：横排锁头（emblem 48px + 衬线「留痕」）+ MENU 下拉；外链组只留 GitHub；语言切换在页脚（zh 默认，EN 备选）
 - **按钮层级**：主按钮=墨绿底白字胶囊；次按钮=1px 描边胶囊（文字色随主题）；文字链=下划线偏移 3px
 - **特性卡**：纸面卡片（白底 92% 不透明、1px 边框、12px 圆角、hover 无位移仅边框加深）；图标 28px 线性 + 标题 + 2 行描述
-- **手机框**：`aspect-ratio 9/19.5`、`border: 1px solid`、内部 `overflow:hidden`、截图 `object-fit: cover`
+- **手机框**：`aspect-ratio 9/16`、1px 描边、圆角 28px（主图 32px）、投影；桌面 hover 上浮 8px
 - **FAQ 手风琴**：`<details>/<summary>` 原生实现（无 JS），展开符号 `+`→`−`
 - **时间线**：顶部横线 + 四节点圆点，节点下图片 + 阶段名 + 天数（等宽字体）
+- **品牌水印**：首页 Hero 背后低透明度 emblem（约 240px），章节标题上方 20px emblem
 
 ---
 
 ## 6. 动效规范
 
-### 6.1 打字机（唯一新增动效）
+### 6.1 打字机
 
 - 触发：理念段进入视口 ≥40%（`IntersectionObserver`，`threshold: 0.4`），**只播一次**
 - 行为：逐字显示「水滴石穿，来自古人的智慧。」，每字 90~120ms 随机抖动；光标 `▍` 闪烁（600ms 方波），播完光标 800ms 后淡出
-- 降级：`prefers-reduced-motion: reduce` → 直接显示全文，无光标；无 JS → 文案直接可见（`.typewriter` 默认可见，JS 加类后隐藏再逐字，保证渐进增强）
-- 实现：原生 JS ≤40 行，独立 `typewriter.js`，不进 `script.js`
+- 降级：`prefers-reduced-motion: reduce` → 直接显示全文，无光标；无 JS → 文案直接可见
+- 实现：独立 `typewriter.js`
 
-### 6.2 全局约束
+### 6.2 滚动揭示
 
-htmx 页面切换过渡（220ms/150ms 淡入淡出）原样继承；`skip-intro` 首屏 intro 动画保留；禁止新增 scroll-jacking、视差、自动轮播。
+- 选择器覆盖 Hero 文案、截图舞台、章节标题、特性卡、三步、伙伴、FAQ、更新列表
+- 进入视口约 18% 后上移 22px + 淡入，同组错落 90ms，只播一次
+- 实现：独立 `reveal.js`；无 JS 时内容默认可见；`prefers-reduced-motion: reduce` 瞬间到位
+- Hero 水印：加载后轻微下落到 12% 透明度（水滴留痕），减动效时静止
+
+### 6.3 全局约束
+
+htmx 页面切换过渡（220ms/150ms 淡入淡出）原样继承；`skip-intro` 首屏 intro 动画保留；禁止 scroll-jacking、视差、自动轮播。
 
 ---
 
@@ -124,9 +132,9 @@ htmx 页面切换过渡（220ms/150ms 淡入淡出）原样继承；`skip-intro`
 - **构造**：`viewBox="0 0 48 48"`，`stroke-width 3`（48 网格，约当 24 网格 1.5px）、`stroke-linejoin/cap: round`、单色 `currentColor`
   - 水滴路径：`M24 6 C24 6 13 19.5 13 28.5 a11 11 0 0 0 22 0 C35 19.5 24 6 24 6 Z`
   - 涟漪：水滴底部下方两条同心弧（`M12 40 a12 4 0 0 0 24 0` 变体， opacity 0.55 / 0.3）
-- **字标**：`留痕` 宋体系（`"Noto Serif SC", "SimSun", serif`）600 字重，与 emblem 水平间距 10px
-- **使用尺寸**：导航 emblem 28px、页脚 20px、暗色主题自动随 `currentColor`
-- 交付：`liuhen-emblem.svg`（emblem 单体）+ `liuhen-logo.svg`（emblem+字标横排锁定版）
+- **字标**：`留痕` 横排衬线（Plantin + `"Noto Serif SC", "SimSun", serif`）600 字重，与 emblem 间距约 11px
+- **使用尺寸**：导航 emblem 48px（手机 40px）+ 字标；页脚 emblem 18px；Hero 水印约 240px / 12% 透明
+- 交付：`liuhen-emblem.svg`（mask / 章节锚点）+ `liuhen-mark.svg`（白描边，导航 img + WebGL）+ header HTML 横排字标
 
 ### 7.2 Favicon（由 emblem 派生，我来生成）
 
