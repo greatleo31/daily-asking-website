@@ -2004,12 +2004,82 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
   --lh-ink: #2F4B3E;
   --lh-mineral: #F6F3EA;
   --lh-night-soft: #8FB8A4;
+  --lh-night-text: #F6F3EA;
+  --lh-night-muted: rgba(246, 243, 234, 0.78);
   --lh-serif-cjk: 'PlantinNow', Georgia, 'Noto Serif SC', 'Source Han Serif SC', 'SimSun', serif;
   --lh-line-day: rgba(53, 52, 49, 0.28);
-  --lh-line-night: rgba(255, 255, 255, 0.32);
+  --lh-line-night: rgba(246, 243, 234, 0.28);
 }
 
 .lh-home { padding-top: 0.5rem; }
+
+body.theme-night .lh-home {
+  color: var(--lh-night-text);
+}
+body.theme-night .lh-hero-title,
+body.theme-night .lh-section-title,
+body.theme-night .lh-card h3,
+body.theme-night .lh-step h3,
+body.theme-night .lh-philosophy-line,
+body.theme-night .lh-faq-item summary,
+body.theme-night .lh-posts-list .post-name {
+  color: var(--lh-night-text);
+}
+body.theme-night .lh-hero-title em,
+body.theme-night .lh-card-icon,
+body.theme-night .lh-more,
+body.theme-night .lh-posts-list a:hover .post-name {
+  color: var(--lh-night-soft);
+}
+body.theme-night .lh-hero-sub,
+body.theme-night .lh-trust,
+body.theme-night .lh-card p,
+body.theme-night .lh-step p,
+body.theme-night .lh-companion-intro,
+body.theme-night .lh-stage figcaption,
+body.theme-night .lh-faq-item p,
+body.theme-night .lh-posts-list .post-date {
+  color: var(--lh-night-muted);
+  opacity: 1;
+}
+body.theme-night .lh-step-no {
+  color: var(--lh-night-soft);
+  opacity: 0.55;
+}
+body.theme-night .lh-btn {
+  color: var(--lh-night-text);
+  border-color: var(--lh-night-text);
+}
+body.theme-night .lh-btn:hover {
+  color: var(--lh-night-soft);
+  border-color: var(--lh-night-soft);
+  opacity: 1;
+}
+body.theme-night .lh-btn--primary,
+body.theme-night .lh-btn--primary:hover {
+  background: var(--lh-night-soft);
+  border-color: var(--lh-night-soft);
+  color: #141715;
+  opacity: 1;
+}
+
+body.theme-night :is(.nav-link, .menu-label, .menu-trigger-toggle, #site-footer, #theme-toggle, #lang-toggle) {
+  color: var(--lh-night-text);
+}
+body.theme-night :is(.nav-link, .menu-trigger-toggle, #theme-toggle, #lang-toggle):hover {
+  color: var(--lh-night-soft);
+}
+
+body.theme-night .letter-body,
+body.theme-night .content-page,
+body.theme-night .posts-list .post-name {
+  color: var(--lh-night-text);
+}
+body.theme-night .letter-body a,
+body.theme-night .email-meta a,
+body.theme-night .letter-footer a {
+  color: var(--lh-night-soft);
+}
 
 /* ① Hero */
 .lh-hero {
