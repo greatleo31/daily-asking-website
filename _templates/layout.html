@@ -75,8 +75,9 @@
   <!-- Shared frame for page content and the four pieces of site chrome. -->
   <div class="site-frame">
     <header class="site-header">
-      <a href="{{ base }}" class="center-logo" dir="ltr">
-        <img class="main-logo" id="logo" src="{{ base }}static/liuhen-logo.svg" alt="留痕">
+      <a href="{{ base }}" class="center-logo lh-brand" dir="ltr" aria-label="留痕" data-i18n-aria="common.site.title">
+        <img class="main-logo" id="logo" src="{{ base }}static/liuhen-mark.svg" alt="" width="200" height="200">
+        <span class="lh-brand-word" aria-hidden="true" data-i18n="common.site.title">留痕</span>
       </a>
 
       <nav class="top-nav" dir="ltr" data-site-menu aria-label="Primary navigation" data-i18n-aria="common.aria.primaryNav">
@@ -105,7 +106,10 @@
     </div>
 
     <footer class="site-footer-bar">
-      <div id="site-footer" dir="ltr" data-i18n="common.site.footer">留痕 · 本地优先的职场证据成长助手</div>
+      <div class="lh-footer-id">
+        <span class="lh-mark lh-mark--foot" aria-hidden="true"></span>
+        <div id="site-footer" dir="ltr" data-i18n="common.site.footer">留痕 · 本地优先的职场证据成长助手</div>
+      </div>
 
       <div class="bottom-controls" dir="ltr">
         <div id="lang-picker" class="lang-picker">
