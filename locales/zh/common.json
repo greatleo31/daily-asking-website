@@ -11,6 +11,7 @@
 
   "action.back": "[返回]",
   "action.close": "[关闭]",
+  "action.top": "返回",
 
   "theme.auto": "自动",
   "theme.dark": "深色",
@@ -84,5 +85,6 @@
   "aria.posts": "留痕更新手记",
   "aria.privacy": "留痕隐私说明",
   "aria.feedback": "留痕反馈与共建",
-  "aria.roadmap": "留痕路线图"
+  "aria.roadmap": "留痕路线图",
+  "aria.backToTop": "返回顶部"
 }

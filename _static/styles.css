@@ -184,12 +184,13 @@ canvas.shader-ready {
 }
 
 .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  flex: 0 0 auto;
   align-items: flex-start;
-  padding: var(--frame-block) var(--frame-inline) 0;
+  padding: var(--frame-block) var(--frame-inline) 1.25rem;
 }
 
 .site-footer-bar {
@@ -1894,17 +1895,9 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
     outline-offset: 2px;
   }
 
-  /* On scrolling pages, the fixed header gets an opaque-to-transparent veil.
-     Content remains visible as it passes underneath without colliding with
-     the logo or menu. */
   body:has(.content-page) .site-header {
-    padding-bottom: calc(var(--frame-chrome-fade) + var(--frame-chrome-clearance));
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--chrome-surface), 1) 0%,
-      rgba(var(--chrome-surface), 1) calc(100% - var(--frame-chrome-fade)),
-      rgba(var(--chrome-surface), 0) 100%
-    );
+    padding-bottom: 0.75rem;
+    background: none;
   }
 
   .theme-night {
@@ -2029,7 +2022,8 @@ body:not(.theme-night) .page--values .disclosure-summary::after {
   --lh-line-night: rgba(246, 243, 234, 0.28);
 }
 
-.lh-home { padding-top: 0.5rem; }
+.lh-home { padding-top: 0.75rem; }
+.content-page { padding-top: 0.75rem; }
 
 body.theme-night .lh-home {
   color: var(--lh-night-text);
@@ -2102,7 +2096,7 @@ body.theme-night .letter-footer a {
 /* ① Hero */
 .lh-hero {
   text-align: center;
-  padding: calc(var(--frame-block) * 0.5) var(--frame-inline) 0;
+  padding: 1.25rem var(--frame-inline) 0;
 }
 .lh-hero-title {
   font-family: var(--lh-serif-cjk);
@@ -2367,6 +2361,44 @@ body.theme-night .lh-posts-list li:last-child { border-bottom-color: var(--lh-li
   letter-spacing: 0.04em;
 }
 
+.lh-top {
+  position: fixed;
+  right: max(1rem, var(--frame-inline));
+  bottom: calc(var(--frame-block) + 4.25rem);
+  z-index: 210;
+  appearance: none;
+  border: 1px solid currentColor;
+  background: var(--lh-ink, #2F4B3E);
+  color: var(--lh-mineral, #F6F3EA);
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--mono-font);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+body.theme-night .lh-top {
+  background: var(--lh-night-soft, #8FB8A4);
+  color: #141715;
+  border-color: var(--lh-night-soft, #8FB8A4);
+}
+.lh-top.is-on {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+@media (max-width: 800px) {
+  .lh-top {
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 html.lh-js .lh-reveal {
   opacity: 0;
   transform: translateY(36px);
@@ -2404,7 +2436,7 @@ html.lh-js .lh-reveal.is-in {
     padding-bottom: 2.5rem;
   }
   .lh-hero {
-    padding-top: calc(var(--frame-block) + 52px);
+    padding-top: 0.75rem;
     padding-left: var(--frame-inline);
     padding-right: var(--frame-inline);
   }

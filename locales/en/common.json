@@ -11,6 +11,7 @@
 
   "action.back": { "message": "[back]", "context": "Back/dismiss button text" },
   "action.close": { "message": "[close]", "context": "Close button text" },
+  "action.top": { "message": "Top", "context": "Back-to-top button label" },
 
   "theme.auto": { "message": "AUTO", "context": "Theme toggle: automatic/system preference" },
   "theme.dark": { "message": "DARK", "context": "Theme toggle: dark mode" },
@@ -84,5 +85,6 @@
   "aria.posts": { "message": "Liúhèn updates", "context": "Posts listing and detail aria" },
   "aria.privacy": { "message": "Liúhèn privacy", "context": "Privacy page aria" },
   "aria.feedback": { "message": "Liúhèn feedback", "context": "Feedback page aria" },
-  "aria.roadmap": { "message": "Liúhèn roadmap", "context": "Roadmap page aria" }
+  "aria.roadmap": { "message": "Liúhèn roadmap", "context": "Roadmap page aria" },
+  "aria.backToTop": { "message": "Back to top", "context": "Back-to-top button aria-label" }
 }
