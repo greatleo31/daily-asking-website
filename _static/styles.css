@@ -2397,6 +2397,26 @@ body.theme-night .lh-posts-list li:last-child { border-bottom-color: var(--lh-li
   letter-spacing: 0.04em;
 }
 
+html.lh-js .lh-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 700ms var(--theme-transition-easing),
+              transform 700ms var(--theme-transition-easing);
+  transition-delay: var(--lh-delay, 0ms);
+}
+html.lh-js .lh-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.lh-js .lh-reveal,
+  html.lh-js .lh-reveal.is-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* 响应式（§3.4 断点） */
 @media (max-width: 900px) {
   .lh-grid, .lh-steps { grid-template-columns: repeat(2, 1fr); }
