@@ -97,6 +97,11 @@ html {
   overflow-x: clip;
 }
 
+html.lh-top-run,
+html.lh-top-run body {
+  scroll-behavior: auto !important;
+}
+
 body {
   min-height: 100vh;
   min-height: 100dvh;
